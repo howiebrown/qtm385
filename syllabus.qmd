@@ -1,5 +1,5 @@
 ---
-title: "QTM 385 - Principles of Experimental Design"
+title: "QTM 385 - Experimental Methods"
 date: "Spring 2025"
 lang: en-GB
 author: 
@@ -38,7 +38,7 @@ editor:
 
 Experimental methods have become increasingly important in social and life sciences, offering reliable ways to test theories and produce generalisable findings. This course covers the essential principles of experimental design, with emphasis on testing causal relationships. Students will learn about causal inference, experimental design techniques, and methods for addressing common challenges in experimental research, such as non-compliance and participant attrition. The course also explores blocking and covariate adjustment, heterogeneous treatment effects, and proper interpretation of results. Special attention will be given to reproducible research practices and ethical considerations in experimental studies.
 
-This course is designed to be both applied and interactive, featuring lectures and hands-on sessions. Students will learn how to design and implement experiments and critically evaluate existing experimental research in their areas of interest. Moreover, students will have the opportunity to develop their writing and presentation skills by drafting an experimental research project and presenting their findings to the class.
+This course is designed to be both applied and interactive, featuring lectures and hands-on sessions. Students will learn how to design and implement experiments and critically evaluate existing experimental research in their areas of interest. Moreover, students will have the opportunity to develop their writing and presentation skills by drafting an experimental research project and presenting their findings.
 
 # Course Information
 
@@ -61,13 +61,13 @@ By the end of this course, students will be able to:
 
 # Prerequisites
 
-This course is designed for students who have taken or are currently taking an introductory course in statistics. Some understanding of hypothesis testing, confidence intervals, and regression analysis is beneficial. However, if you have not taken such courses, that is also fine. The course is not math-heavy, and all concepts will be explained in detail in class. While some familiarity with `R` or `Python` helps, it is also not essential, and we can adjust the course accordingly if you need assistance. If you are unsure whether you meet the prerequisites, please contact me to discuss your background.
+This course is designed for students who have taken or are currently taking an introductory course in statistics. Some understanding of hypothesis testing, confidence intervals, and regression analysis is beneficial. However, if you have not taken such courses, that is also fine. The course is not math-heavy, and all concepts will be explained in detail in class. Some familiarity with `R` or `Python` is required, as we will use these tools for data analysis. We can adjust the course accordingly if you need assistance. If you are unsure whether you meet the prerequisites, please contact me to discuss your background.
 
 # Software
 
 We will use `R` for all data analysis in this course. `R` is a free and open-source software environment for statistical computing and graphics. You can download `R` from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). You are free to use any text editor to write your `R` code, but I recommend using [RStudio](https://www.rstudio.com/products/rstudio/download/), [VSCode](https://code.visualstudio.com/), or [Jupyter Notebooks](https://jupyter.org/) with the `R` kernel. If you are feeling brave or want to learn some new skills, you can also use [Neovim](https://neovim.io/) with the [Nvim-R](https://github.com/jalvesaq/Nvim-R) plugin. That is, if [you can exit the editor](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/). :)
 
-We will also use [Quarto](https://quarto.org/) to write the reports. Quarto is a new document format that combines the best features of [Markdown](https://www.markdownguide.org/), [\LaTeX](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes), and [R Markdown](https://rmarkdown.rstudio.com). It is easy to use, very versatile, and allows you to write reports, slides, books, and even websites in a single document. You can install Quarto from the [Quarto website](https://quarto.org/). We will have a hands-on session on how to use Quarto in the course, and I have prepared templates for your [pre-analysis plan](https://github.com/danilofreire/qtm151/pre-analysis-plan-template) and [presentation](https://github.com/danilofreire/quarto-presentation). However, you are free to use any other template you prefer or even write your own.
+We will also use [Quarto](https://quarto.org/) to write the reports. Quarto is a new document format that combines the best features of [Markdown](https://www.markdownguide.org/), [\LaTeX](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes), and [R Markdown](https://rmarkdown.rstudio.com). It is easy to use, very versatile, and allows you to write reports, slides, books, and even websites in a single document. You can install Quarto from the [Quarto website](https://quarto.org/). We will have a hands-on session on how to use Quarto in the course, and I have prepared templates for your [pre-analysis plan](https://github.com/danilofreire/qtm385/pre-analysis-plan-template) and [presentation](https://github.com/danilofreire/quarto-presentation). However, you are free to use any other template you prefer or even write your own.
 
 # Office Hours
 
@@ -91,9 +91,9 @@ Emory University welcomes students from around the country and the world, and th
 
 # Assignments and Grading Policy
 
-**Problem Sets: 40%.** There will be 6 problem sets throughout the course, each focusing on different aspects of experimental design and analysis. These assignments are designed to reinforce concepts covered in lectures and readings, and to provide hands-on practice with experimental design techniques. Problem sets will include a mix of theoretical questions and practical applications. They will be assigned regularly and must be completed individually. You may discuss your work with other colleagues as long as you do not copy entire sentences, just changing a few words. If you worked with other students, please write down their names on your problem set. Please also acknowledge any sources you used in your work, including textbooks, articles, and AI resources.
+**Problem Sets: 50%.** There will be ten problem sets throughout the course, each focusing on different aspects of experimental design and analysis. These assignments are designed to reinforce concepts covered in lectures and readings, and to provide hands-on practice with experimental design techniques. Problem sets will include a mix of theoretical questions and practical applications. They will be assigned regularly and must be completed individually. You may discuss your work with other colleagues as long as you do not copy entire sentences, just changing a few words. If you worked with other students, please write down their names on your problem set. Please also acknowledge any sources you used in your work, including textbooks, articles, and AI resources.
 
-**Pre-Analysis Plan (PAP): 30%.** Students will work in groups to develop a comprehensive pre-analysis plan for an experimental study. The PAP should be written in Quarto and include the following components:
+**Pre-Analysis Plan (PAP): 20%.** Students will work in groups to develop a pre-analysis plan for an experimental study. The PAP should be written in Quarto and include the following components:
 
 - Research question and hypotheses
 - Experimental design and randomisation procedure
@@ -102,7 +102,7 @@ Emory University welcomes students from around the country and the world, and th
 - Detailed analysis plan, including statistical models and robustness checks
 - Plan for handling issues such as missing data, non-compliance issues, and attrition
 
-A detailed guide for writing the PAP is available in the course GitHub repository and webpage: <https://github.com/danilofreire/qtm385/blob/main/pap-guide/pap-guide.pdf>. This assignment will help students develop skills in planning and pre-registering experiments, a crucial practice in modern experimental research. 
+A guide for writing the PAP will be available in the course GitHub repository and webpage. This assignment will help students develop skills in planning and pre-registering experiments, a crucial practice in modern experimental research. 
 
 **Final Project: 30%.** The final project will consist of a short presentation, created using Quarto, based on the pre-analysis plans developed earlier in the course. For this assignment, I will simulate data based on each group's PAP, intentionally introducing challenges such as missing data on covariates and non-compliance. Students will need to analyse this simulated data as if it were the true results of their proposed experiments, addressing any issues that arise in light of their original PAP. The presentation should include:
 
@@ -144,7 +144,7 @@ Students are encouraged to make use of the library's resources, including its [r
 
 # Subject to Change Policy
 
-While I will try to adhere to the course schedule as much as possible, I also want to adapt to your learning pace and style. The syllabus and course plan may change in the semester. Again, please visit [the course website](https://danilofreire.github.io/qtm151) regularly to check for updates. I will also announce any changes in class and via email.
+While I will try to adhere to the course schedule as much as possible, I also want to adapt to your learning pace and style. The syllabus and course plan may change in the semester. Again, please visit [the course website](https://danilofreire.github.io/qtm385) regularly to check for updates. I will also announce any changes in class and via email.
 
 # Course Outline and Readings
 
@@ -152,18 +152,19 @@ It is important to read the required materials before class. Please feel free to
 
 ## Week 01: Introduction and Course Overview
 
-### Wednesday, August 28:
+### Lecture 01: Introduction to Experimental Design
 
 Required readings:
 
 - Syllabus and course website: <http://danilofreire.github.io/qtm385>.
 - GitHub repository: <https://github.com/danilofreire/qtm385>.
-- Lecture slides: [Welcome to QTM 385: Introduction / Why Experiments?](https://danilofreire.github.io/qtm385/slides/01-introduction.html).
+- Lecture slides: Welcome to QTM 385: Introduction / Why Experiments?.
 - FEDAI: Chapter 01: Introduction.
 
 Weekly suggested readings:
 
 - Druckman, J. N., Green, D. P., Kuklinski, J. H., & Lupia, A. (2011). [Experiments: An Introduction to Core Concepts](https://www.cambridge.org/core/books/cambridge-handbook-of-experimental-political-science/CCEA698DB2EB4FF270D988F84EA903772). In J. N. Druckman, D. P. Green, J. H. Kuklinski, & A. Lupia (Eds.), Cambridge Handbook of Experimental Political Science (pp. 19-41). Cambridge University Press.
+- Hernán, M. A. (2018). [The C-Word: Scientific Euphemisms Do Not Improve Causal Inference from Observational Data](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304337). American Journal of Public Health, 108(5), 616-619.
 - Mize, T. D., & Manago, B. (2022). [The Past, Present, and Future of Experimental Methods in the Social Sciences](https://doi.org/10.1016/j.ssresearch.2022.102799). Social Science Research, 108, 1-24. 
 - Bothwell, L. E., Greene, J. A., Podolsky, S. H., & Jones, D. S. (2016). [Assessing the Gold Standard — Lessons from the History of RCTs](https://www.nejm.org/doi/full/10.1056/nejmms1604593). New England Journal of Medicine, 374(22), 2175-2181.
 - Bhatt, A. (2010). [Evolution of Clinical Research: A History Before and Beyond James Lind](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3149409/). Perspectives in Clinical Research, 1(1), 6-10.
@@ -171,25 +172,25 @@ Weekly suggested readings:
 
 ## Week 02: The Research Design Process
 
-### Monday, September 02: Labour Day (No Class)
-
-### Wednesday, September 04:
+### Lecture 02: Theories and Experiments
 
 Required readings:
 
-- Lecture slides: [The Research Design Process: Testing Theories with Experiments](https://danilofreire.github.io/qtm151/slides/02a-research-design.html).
+- Lecture slides: The Research Design Process: Testing Theories with Experiments.
+- Blair, G., Cooper, J., Coppock, A., & Humphreys, M. (2019). [Declaring and Diagnosing Research Designs](https://doi.org/10.1017/S0003055419000194). American Political Science Review, 113(3), 838-859.
 - Card, D., DellaVigna, S., & Malmendier, U. (2011). [The Role of Theory in Field Experiments](https://pubs.aeaweb.org/doi/pdf/10.1257%2Fjep.25.3.39). Journal of Economic Perspectives, 25(3), 39-62.
-- Glanz, K., & Bishop, D. B. (2010). [The Role of Behavioral Science Theory in Development and Implementation of Public Health Interventions](https://www.annualreviews.org/content/journals/10.1146/annurev.publhealth.012809.103604). Annual Review of Public Health, 31(1), 399-418.
+- Problem Set 01 assigned.
 
-### Wednesday, September 04:
+### Lecture 03: When Experiments are Not Possible
 
-- Lecture slides: [Natural and Quasi-Experiments](https://danilofreire.github.io/qtm151/slides/02b-natural-experiments.html).
+- Lecture slides: Natural and Quasi-Experiments.
 - Dunning, T. (2012). [Natural Experiments in the Social Sciences: A Design-Based Approach](https://www.cambridge.org/core/books/natural-experiments-in-the-social-sciences/96A64CBDC2A2952DC1C68AF77DE675AF). Cambridge University Press. Chapter 01: Introduction.
 - Petticrew, M., Cummins, S., Ferrell, C., Findlay, A., Higgins, C., Hoy, C., ... & Sparks, L. (2005). [Natural Experiments: An Underused Tool for Public Health?](https://www.sciencedirect.com/science/article/abs/pii/S0033350605000296). Public Health, 119(9), 751-757.
 
 Weekly suggested readings:
 
 - Dunning, T. (2016). [Transparency, Replication, and Cumulative Learning: What Experiments Alone Cannot Achieve](https://www.annualreviews.org/content/journals/10.1146/annurev-polisci-072516-014127). Annual Review of Political Science, 19(1), 541-563.
+- Glanz, K., & Bishop, D. B. (2010). [The Role of Behavioral Science Theory in Development and Implementation of Public Health Interventions](https://www.annualreviews.org/content/journals/10.1146/annurev.publhealth.012809.103604). Annual Review of Public Health, 31(1), 399-418.
 - Sell, J. (2018). [Definitions and the Development of Theory in Social Psychology](https://journals.sagepub.com/doi/10.1177/0190272518755335). Social Psychology Quarterly, 81(1), 8-22. 
 - Walker, H. A., & Cohen, B. P. (1985). [Scope Statements: Imperatives for Evaluating Theory](https://www.jstor.org/stable/2095540). American Sociological Review, 50(3), 288–301.
 - Banerjee, A. V., & Duflo, E. (2009). [The Experimental Approach to Development Economics](https://www.annualreviews.org/content/journals/10.1146/annurev.economics.050708.143235). Annual Review of Economics 1(1), 151-178.
@@ -197,36 +198,109 @@ Weekly suggested readings:
 
 ## Week 03: Potential Outcomes Framework
 
-### Monday, September 09:
-
-- [Problem Set 01](https://danilofreire.github.io/qtm151/problem-sets/problem-set-01.pdf) due.
+### Lecture 04: Causal Inference and Potential Outcomes
 
 Required readings:
 
-- Lecture slides: [Potential Outcomes Framework](https://danilofreire.github.io/qtm151/slides/03-potential-outcomes.html).
+- Lecture slides: Potential Outcomes Framework.
 - FEDAI: Chapter 02: Causal Inference and Experimentation.
+- Rubin, D. B. (2005). [Causal Inference using Potential Outcomes: Design, Modeling, Decisions](https://www.tandfonline.com/doi/abs/10.1198/016214504000001880). Journal of the American Statistical Association, 100(469), 322-331.
+- Problem Set 01 due.
+- Problem Set 02 assigned.
 
-### Wednesday, September 11:
+### Lecture 05: Selection Bias and Randomisation
 
 Required readings:
 
-- Angrist, J. D., & Pischke, J. S. (2014). [Mastering 'Metrics: The Path from Cause to Effect](https://assets.press.princeton.edu/chapters/s10363.pdf). Princeton University Press. Chapter 01: Randomized Trials. The appendix is worth reading as well, but it is optional.
-- Lecture slides: [Selection Bias and Randomisation](https://danilofreire.github.io/qtm151/slides/04-selection-bias.html).
+- Lecture slides: Selection Bias and Randomisation.
+- Angrist, J. D., & Pischke, J. S. (2014). [Mastering 'Metrics: The Path from Cause to Effect](https://assets.press.princeton.edu/chapters/s10363.pdf). Princeton University Press. Chapter 01: Randomized Trials. The appendix is worth reading as well.
+- Hernán, M. A., Hernández-Díaz, S., & Robins, J. M. (2004). [A Structural Approach to Selection Bias](https://journals.lww.com/epidem/fulltext/2004/09000/Causation_of_Bias__The_Episcope.00020.aspx). Epidemiology, 15(5), 615-625.
+- Problem Set 02 assigned.
+- Problem Set 01 due.
 
 Weekly suggested readings:
 
-- Rubin, D. B. (2005). [Causal Inference Using Potential Outcomes: Design, Modeling, Decisions](https://www.tandfonline.com/doi/abs/10.1198/016214504000001880). Journal of the American Statistical Association, 100(469), 322-331.
 - Imbens, G. W., & Rubin, D. B. (2015). [Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction](https://www.cambridge.org/core/books/causal-inference-for-statistics-social-and-biomedical-sciences/71126BE90C58F1A431FE9B2DD07938AB). Cambridge University Press. Part I - Introduction.
+- Hernán M.A. & Robins J.M. (2020). [Causal Inference: What If](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/). Boca Raton: Chapman & Hall/CRC. Chapters 6-10. Maths-heavy but very insightful.
 - Morgan, S. L., & Winship, C. (2015). [Counterfactuals and Causal Inference: Methods and Principles for Social Research](https://www.cambridge.org/core/books/counterfactuals-and-causal-inference/5CC81E6DF63C5E5A8B88F79D45E1D1B7). Cambridge University Press. Chapter 02: Counterfactuals and Potential Outcomes Model.
 - Holland, P. W. (1986). [Statistics and Causal Inference](https://www.jstor.org/stable/2289064). Journal of the American Statistical Association, 81(396), 945-960.
 
 ## Week 04: Sampling Distribution and Randomisation Inference 
 
+### Lecture 06: Statistical Inference for Randomised Experiments
 
+- FEDAI: Chapter 03: Sampling Distributions, Statistical Inference, and Hypothesis Testing.
+- EGAP Methods Guides: [Hypothesis Testing](https://egap.org/resource/10-things-to-know-about-hypothesis-testing/), [Randomisation Inference](https://egap.org/resource/10-things-to-know-about-randomization-inference/), and [Cluster Randomisation](https://egap.org/resource/10-things-to-know-about-cluster-randomization/). These short guides provide a good overview of the topics we will cover in class, as well as example code in `R`.
+- Problem Set 03 assigned.
+- Problem Set 02 due.
 
-## Week 12 - Ethics in Experimental Research
+### Lecture 07: Texts for discussion
 
-### Monday, November 18:
+- Kalla, J. & D. Broockman. 2016. [Campaign Contributions Facilitate Access to Congressional Officials: A Randomized Field Experiment](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12180). American Journal of Political Science, 60(3): 545–558
+- Chattopadhyay, R., & Duflo, E. (2004). [Women as policy makers: Evidence from a randomized policy experiment in India](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00539.x). Econometrica, 72(5), 1409-1443.
+- Shrout, P. E., & Rodgers, J. L. (2018). [Psychology, science, and knowledge construction: Broadening perspectives from the replication crisis](https://www.annualreviews.org/content/journals/10.1146/annurev-psych-122216-011845). Annual Review of Psychology, 69(1), 487-510.
+
+Weekly suggested readings:
+
+- Imbens, G. W., & Rubin, D. B. (2015). [Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction](https://www.cambridge.org/core/books/causal-inference-for-statistics-social-and-biomedical-sciences/71126BE90C58F1A431FE9B2DD07938AB). Cambridge University Press. Part II - Randomised Experiments.
+- Casella, G., & Berger, R. (2024). [Statistical inference](https://books.google.com.br/books?id=cqUIEQAAQBAJ&lpg=PP1&ots=BSdrJEABLZ&dq=Sampling%20Distributions%2C%20Statistical%20Inference%2C%20and%20Hypothesis%20Testing.&lr&pg=PP1#v=onepage&q&f=false). CRC Press. More advanced but very comprehensive.
+- Berry, C. R., & Fowler, A. (2021). [Leadership or luck? Randomization inference for leader effects in politics, business, and sports](https://www.science.org/doi/full/10.1126/sciadv.abe3404). Science advances, 7(4), eabe3404.
+- Caughey, D., Dafoe, A., Li, X., & Miratrix, L. (2023). [Randomisation inference beyond the sharp null: bounded null hypotheses and quantiles of individual treatment effects](https://academic.oup.com/jrsssb/article-abstract/85/5/1471/7246293?login=false). Journal of the Royal Statistical Society Series B: Statistical Methodology, 85(5), 1471-1491.
+
+## Week 05: Blocking, Covariate Adjustment, and Statistical Power
+
+### Lecture 08: Blocking and Covariate Adjustment
+
+- Lecture slides: Blocking and Covariate Adjustment.
+- FEDAI: Chapter 04: Using Covariates in Experimental Design and Analysis
+- Problem Set 04 assigned.
+- Problem Set 03 due.
+
+### Lecture 09: Statistical Power and Sample Size Calculations
+
+- Lecture slides: Statistical Power and Sample Size Calculations.
+- FEDAI Appendix 3.1 on Power
+- [EGAP Methods Guide on Power Calculations](https://egap.org/resource/10-things-to-know-about-statistical-power/).
+
+Weekly suggested readings:
+
+- R Psychology. (2023). [Understanding Statistical Power and Significance Testing](https://rpsychologist.com/d3/nhst/). A comprehensive guide to power analysis in `R`.
+- EGAP: [Power Calculator](https://egap.shinyapps.io/power-app/). An interactive tool to calculate power for your experiments.
+- Pek, J., Hoisington-Shaw, K. J., & Wegener, D. T. (2024). [Uses of uncertain statistical power: Designing future studies, not evaluating completed studies](https://psycnet.apa.org/doi/10.1037/met0000577). Psychological Methods.
+- Li, X., & Ding, P. (2020). [Rerandomization and regression adjustment](https://doi.org/10.1111/rssb.12353). Journal of the Royal Statistical Society Series B: Statistical Methodology, 82(1), 241-268.
+
+## Week 06: Non-Compliance and Attrition
+
+### Lecture 10: Non-Compliance I
+
+- Lecture slides: Non-Compliance I
+- FEDAI: Chapter 05: One-Sided Non-Compliance.
+- Problem Set 05 assigned.
+- Problem Set 04 due.
+
+### Lecture 11: Non-Compliance II
+
+- Lecture slides: Non-Compliance II.
+- FEDAI: Chapter 06: Two-Sided Non-Compliance.
+
+Weekly suggested readings:
+
+- Angrist, J. D., Imbens, G. W., & Rubin, D. B. (1996). [Identification of Causal Effects Using Instrumental Variables](https://www.jstor.org/stable/2291629). Journal of the American Statistical Association, 91(434), 444-455.
+- Angrist, J. D., & Pischke, J. S. (2009). [Mostly Harmless Econometrics: An Empiricist's Companion](https://link.springer.com/article/10.1057/be.2009.37). Princeton University Press. Chapter 4: Instrumental Variables Estimation.
+- Baryakova, T.H., Pogostin, B.H., Langer, R. et al. [Overcoming barriers to patient adherence: the case for developing innovative drug delivery systems](https://www.nature.com/articles/s41573-023-00670-0). Nature Reviews Drug Discovery 22, 387–409 (2023).
+- Gerber, A. S., Green, D. P., Kaplan, E. H., & Kern, H. L. (2010). [Baseline, placebo, and treatment: Efficient estimation for three-group experiments](https://www.cambridge.org/core/journals/political-analysis/article/abs/baseline-placebo-and-treatment-efficient-estimation-for-threegroup-experiments/F9B246F9645C925BE49E98DFFE600A65). Political Analysis, 18(3), 297-315.
+
+## Week 07: Attrition and Ethics in Experimental Research
+
+### Lecture 12: Attrition and Missing Data
+
+- Lecture slides: Attrition and Missing Data.
+- FEDAI: Chapter 07: Attrition.
+- Lo, A., Renshon, J., & Bassan-Nygate, L. (2024). [A Practical Guide to Dealing with Attrition in Political Science Experiments](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/practical-guide-to-dealing-with-attrition-in-political-science-experiments/0E2B475CE9B082EE5AF8680E6BB1E985). Journal of Experimental Political Science, 11(2), 147-161. 
+- Problem Set 06 assigned.
+- Problem Set 05 due. 
+
+### Lecture 13: Ethical Considerations in Experimental Research
 
 Required readings:
 
@@ -235,5 +309,137 @@ Required readings:
 
 Weekly suggested readings:
 
+- Zhou, H., & Fishbach, A. (2016). [The pitfall of experimenting on the web: How unattended selective attrition leads to surprising (yet false) research conclusions](https://psycnet.apa.org/record/2016-29224-001). Journal of personality and social psychology, 111(4), 493.
+- Coppock, A., Gerber, A. S., Green, D. P., & Kern, H. L. (2017). [Combining double sampling and bounds to address nonignorable missing outcomes in randomized experiments](https://www.cambridge.org/core/journals/political-analysis/article/abs/combining-double-sampling-and-bounds-to-address-nonignorable-missing-outcomes-in-randomized-experiments/76D6DB70466C906123D9842528C9A861). Political Analysis, 25(2), 188-206.
 - Asiedu, E., Dean, E., Karlan, D., & Osei, R. (2021). [Ethics and society review: Ethics reflection as a precondition to research funding](https://doi.org/10.1073/pnas.2117261118). Proceedings of the National Academy of Sciences, 118(52), e2117261118.
 - ASAB Ethical Committee/ABS Animal Care Committee. (2024). [Guidelines for the ethical treatment of nonhuman animals in behavioural research and teaching](https://www.sciencedirect.com/science/article/pii/S0003347223003172). Animal Behaviour, 207, I-XI.
+
+## Week 08: Quarto and Pre-Analysis Plans
+
+### Lecture 14: Introduction to Quarto
+
+- Lecture slides: Introduction to Quarto.
+- Quarto official website: <https://quarto.org/>.
+- Problem Set 07 assigned.
+- Problem Set 06 due.
+
+### Lecture 15: Writing Pre-Analysis Plans
+
+- Lecture slides: How to Write a Pre-Analysis Plan.
+- EGAP: [Pre-Analysis Plans](https://egap.org/resource/10-things-to-know-about-pre-analysis-plans/).
+- Olken, B. A. (2015). [Promises and perils of pre-analysis plans](https://www.aeaweb.org/articles?id=10.1257/jep.29.3.61). Journal of Economic Perspectives, 29(3), 61-80.
+
+Weekly suggested readings:
+
+- [Quarto official website](https://quarto.org/).
+- Awesome Quarto: <https://github.com/mcanouil/awesome-quarto>. Note: this repository contains dozens of tutorials, examples, and resources. 
+- Çetinkaya-Rundel, M. & Lowndes, J. S. (2022) [Keynote talk: Hello Quarto: Share • Collaborate • Teach • Reimagine](https://www.youtube.com/watch?v=p7Hxu4coDl8). [Slides](https://mine.quarto.pub/hello-quarto/#/hello-quarto-title) and [source code](https://github.com/mine-cetinkaya-rundel/hello-quarto). This is one of the nicest Quarto presentations I have seen.
+- [Getting Started with Quarto (YouTube)](https://www.youtube.com/watch?v=_f3latmOhew&t=2s). Note: Posit (formerly RStudio) has a series of tutorials on Quarto on their YouTube channel. You can find their playlist [here](https://www.youtube.com/playlist?list=PL9HYL-VRX0oQI8fVioFxMTBrViFnRX_Df).
+- Nosek, B.A., Alter, G., Banks, G.C., Borsboom, D., Bowman, S.D., Breckler, S.J., Buck, S., Chambers, C.D., Chin, G., Christensen, G. and Contestabile, M., 2015. [Promoting an open research culture](https://www.science.org/doi/10.1126/science.aab2374). Science, 348(6242), pp.1422-1425.
+
+## Week 09: Interference
+
+### Lecture 16: Interference in Experiments
+
+- Lecture slides: Interference in Experiments.
+- FEDAI: Chapter 08: Interference between Experimental Units.
+- EGAP: [Spillovers](https://egap.org/resource/10-things-to-know-about-spillovers/).
+- Problem Set 08 assigned.
+- Problem Set 07 due.
+
+### Lecture 17: Texts for discussion
+
+- Centola, D. (2010). [The spread of behavior in an online social network experiment](https://www.science.org/doi/abs/10.1126/science.1185231). Science, 329(5996), 1194-1197.
+- Paluck, B. L., Shepherd, H., and Aronow, P. 2016. [Changing climates of conflict: A social network experiment in 56 schools.](https://www.pnas.org/doi/abs/10.1073/pnas.1514483113) Proceedings of the National Academy of Sciences, 113(3): 566-571
+- Gerber, A. S., & Green, D. P. (2000). [The effects of canvassing, telephone calls, and direct mail on voter turnout: A field experiment](https://www.jstor.org/stable/2991720). American Political Science Review, 94(3), 653-663.
+
+Weekly suggested readings:
+
+- Athey, Susan, and Guido W. Imbens (2017a). [The Econometrics of Randomized Experiments.](http://arxiv.org/abs/1607.00698) In Handbook of Economic Field Experiments, vol. 1 (E. Duflo and A. Banerjee, eds.)
+- Bowers, Jake, Mark M. Fredrickson, and Costas Panagopoulos (2013). [Reasoning about Interference Between Units: A General Framework.](https://www.cambridge.org/core/journals/political-analysis/article/abs/reasoning-about-interference-between-units-a-general-framework/0E2410C1A5666EE5ACA4CBE29AFFFAE7) Political Analysis 21: 97–124.
+- Sinclair, Betsy, Margaret McConnell, and Donald P. Green (2012). [Detecting Spillover Effects: Design and Analysis of Multilevel Experiments.](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-5907.2012.00592.x) American Journal of Political Science 56: 1055–1069.
+
+## Week 10: Heterogeneous Treatment Effects
+
+### Lecture 18: Heterogeneous Treatment Effects
+
+- Lecture slides: Heterogeneous Treatment Effects.
+- FEDAI: Chapter 09: Heterogeneous Treatment Effects
+- Problem Set 09 assigned.
+- Problem Set 08 due.
+
+### Lecture 19: Texts for discussion
+
+- Munshi, K. (2003). [Networks in the modern economy: Mexican migrants in the US labor market.](https://academic.oup.com/qje/article-abstract/118/2/549/1899587?login=false) The Quarterly Journal of Economics, 118(2), 549-599.
+- Miguel, E., & Kremer, M. (2004). [Worms: identifying impacts on education and health in the presence of treatment externalities.](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00481.x) Econometrica, 72(1), 159-217.
+- TBD
+
+Weekly suggested readings:
+
+- Ding, P., Feller, A., & Miratrix, L. (2016). [Randomization inference for treatment effect variation.](https://academic.oup.com/jrsssb/article/78/3/655/7040906?login=false) Journal of the Royal Statistical Society Series B: Statistical Methodology, 78(3), 655-671.
+- Imai, K., & Ratkovic, M. (2013). [Estimating treatment effect heterogeneity in randomized program evaluation.](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-7/issue-1/Estimating-treatment-effect-heterogeneity-in-randomized-program-evaluation/10.1214/12-AOAS593.full) Annals of Applied Statistics, 7(1), 443-470.
+- Wager, S., & Athey, S. (2018). [Estimation and inference of heterogeneous treatment effects using random forests.](https://www.tandfonline.com/doi/abs/10.1080/01621459.2017.1319839) Journal of the American Statistical Association, 113(523), 1228-1242.
+
+## Week 11: Mediation and Survey Experiments
+
+### Lecture 20: Mediation Analysis
+
+- Lecture slides: Mediation Analysis.
+- FEDAI: Chapter 10: Mediation.
+- Problem Set 10 assigned.
+- Problem Set 09 due.
+
+### Lecture 21: Survey Experiments
+
+- Lecture slides: Survey Experiments.
+- EGAP: [Survey Experiments](https://egap.org/resource/10-things-to-know-about-survey-experiments/).
+- Sniderman, P. M. (2018). [Some advances in the design of survey experiments.](https://www.annualreviews.org/content/journals/10.1146/annurev-polisci-042716-115726) Annual Review of Political Science, 21(1), 259-275.
+- Problem Set 10 due.
+
+Weekly suggested readings:
+
+- VanderWeele, T. J. (2016). [Mediation analysis: a practitioner's guide.](https://www.annualreviews.org/content/journals/10.1146/annurev-publhealth-032315-021402) Annual review of public health, 37(1), 17-32.
+- MacKinnon, D. P., Fairchild, A. J., & Fritz, M. S. (2007). [Mediation analysis.](https://www.annualreviews.org/content/journals/10.1146/annurev.psych.58.110405.085542) Annu. Rev. Psychol., 58(1), 593-614.
+- Zhao, X., Lynch Jr, J. G., & Chen, Q. (2010). [Reconsidering Baron and Kenny: Myths and truths about mediation analysis.](https://academic.oup.com/jcr/article-abstract/37/2/197/1813998?login=false) Journal of consumer research, 37(2), 197-206.
+- Kane, J. V. (2024). [More than meets the ITT: A guide for anticipating and investigating nonsignificant results in survey experiments.](https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/more-than-meets-the-itt-a-guide-for-anticipating-and-investigating-nonsignificant-results-in-survey-experiments/C01250EB50598D6328B6065F1DF86BA7) Journal of Experimental Political Science, 1-16.
+- Schneider, D., & Harknett, K. (2022). [What’s to like? Facebook as a tool for survey data collection.](https://journals.sagepub.com/doi/full/10.1177/0049124119882477) Sociological Methods & Research, 51(1), 108-140.
+
+## Week 12: Discussions
+
+### Lecture 22: Texts for discussion
+
+- Druckman, J. N., Gilli, M., Klar, S., & Robison, J. (2015). [Measuring drug and alcohol use among college student‐athletes.](https://onlinelibrary.wiley.com/doi/abs/10.1111/ssqu.12135) Social Science Quarterly, 96(2), 369-380.
+- Freire, D., & Skarbek, D. (2023). [Vigilantism and institutions: Understanding attitudes toward lynching in Brazil.](https://journals.sagepub.com/doi/full/10.1177/20531680221150389) Research & Politics, 10(1), 20531680221150389.
+- TBD
+
+### Lecture 23: Discussion of Final Projects
+
+- Roundtable on pre-analysis plans (no readings required)
+
+Weekly suggested readings:
+
+- Aronow, Peter M., Alexander Coppock, Forrest W. Crawford, and Donald P. Green. [Combining list experiment and direct question estimates of sensitive behavior prevalence.](https://academic.oup.com/jssam/article-abstract/3/1/43/915561?login=false) Journal of Survey Statistics and Methodology 3, no. 1 (2015): 43-66.
+- Traunmüller, R., Kijewski, S., & Freitag, M. (2019). [The silent victims of sexual violence during war: Evidence from a list experiment in Sri Lanka.](https://journals.sagepub.com/doi/abs/10.1177/0022002719828053) Journal of Conflict Resolution, 63(9), 2015-2042.
+- Coppock, A., & McClellan, O. A. (2019). [Validating the demographic, political, psychological, and experimental results obtained from a new source of online survey respondents.](https://journals.sagepub.com/doi/full/10.1177/2053168018822174) Research & politics, 6(1), 2053168018822174.
+
+## Week 13: Meta-Analysis
+
+### Lecture 24: Meta-Analysis
+
+- Lecture slides: Meta-Analysis.
+- FEDAI: Chapter 11: Integration of Research Findings.
+- EGAP: [External Validity](https://egap.org/resource/10-things-to-know-about-external-validity/).
+- Problem Set 10 due.
+
+### Lecture 25: Guidelines for Experiments
+
+- Lecture slides: Guidelines for Experiments.
+- FEDAI: Chapters 12 and 13.
+
+## Week 14 - Discussion of Final Projects
+
+### Lecture 26: Review and Final Project Discussion
+
+- Roundtable on final projects (no readings required)
+
+### Lecture 27: Final Project Presentations.
