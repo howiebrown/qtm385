@@ -29,7 +29,6 @@ format:
       number-sections: true
       cite-method: natbib
       biblio-style: apalike
-      bibliography: references.bib
 editor:
   render-on-save: true
 ---
