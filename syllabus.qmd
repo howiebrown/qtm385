@@ -49,14 +49,13 @@ All information about the course will be available at <http://danilofreire.githu
 
 By the end of this course, students will be able to:
 
-1. Design rigorous experimental studies, including appropriate randomisation procedures and sample size calculations.
-2. Develop comprehensive pre-analysis plans (PAPs) for experimental research, demonstrating an understanding of best practices in pre-registration.
-3. Apply statistical techniques to analyse experimental data.
-4. Use Quarto to create reproducible research documents and presentations.
-5. Critically evaluate experimental designs and results, identifying potential issues and limitations.
-6. Adapt analysis strategies to address unexpected challenges in experimental data.
-7. Understand and apply ethical considerations in experimental design and analysis.
-8. Develop problem-solving skills through regular problem sets covering various aspects of experimental design and analysis.
+1. Design rigorous experiments with proper randomisation procedures and sample sizing calculations
+2. Create pre-analysis plans (PAP) and apply appropriate statistical methods for experimental analysis
+3. Produce reproducible reports using [Quarto](https://quarto.org/)
+4. Evaluate experimental designs, identifying potential limitations 
+5. Manage unexpected data challenges, such as attrition and non-compliance
+6. Understand ethical considerations in experimental design
+7. Develop analytical skills through practical problem sets and discussion sessions
 
 # Prerequisites
 
@@ -157,7 +156,7 @@ Required readings:
 
 - Syllabus and course website: <http://danilofreire.github.io/qtm385>.
 - GitHub repository: <https://github.com/danilofreire/qtm385>.
-- Lecture slides: Welcome to QTM 385: Introduction / Why Experiments?.
+- Lecture slides: [Welcome to QTM 385: Introduction / Why Experiments?](https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-01/01-introduction.html)
 - FEDAI: Chapter 01: Introduction.
 
 Weekly suggested readings:
