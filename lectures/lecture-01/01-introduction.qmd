@@ -1,8 +1,6 @@
 ---
 title: "Welcome to QTM 385"
 subtitle: "Lecture 01: Introduction"
-date: "2025-01-15"
-date-format: "DD MMMM, YYYY"
 author:
   - name: Danilo Freire
     orcid: 0000-0002-4712-6810
@@ -419,86 +417,7 @@ From [xkcd](https://xkcd.com/552/)
 :::
 :::
 
-## Confounding bias
-
-:::{style="margin-top: 50px; font-size: 24px; text-align: center;"}
-"_A pretreatment variable that is associated with both the treatment and the outcome variables is called [a confounder]{.alert}_ and is source of [confounding bias]{.alert} in the estimation of the treatment effect" (Imai 2017, p. 58)
-
-![](figures/confounding.png){width="60%"}
-:::
-
-## Causal identification
-
-:::{style="margin-top: 50px; font-size: 26px;"}
-- We can try to make this assumption more credible, for instance by:
-  - Subsetting the sample to rather homogeneous subgroups
-  - Using covariate adjustment to reduce unit heterogeneity 
-  - Matching 
-  - [Randomisation]{.alert}
-- Ultimately, causal identification requires that [all observed and unobserved confounders are accounted for – or ‘eliminated’ by design]{.alert}
-- This assumption remains [untestable]{.alert} – no matter the research design!
-- Causal inference thus requires making untestable assumptions
-- [Causal identification]{.alert}: Development and application of [an identification strategy]{.alert} that makes these assumptions as plausible and defensible as possible
-:::
-
 # Questions? {background-color="#2d4563"}
-
-# A brief introduction to potential outcomes {background-color="#2d4563"}
-
-## Potential outcomes
-
-:::{style="margin-top: 50px; font-size: 26px;"}
-- ["What if?"]{.alert}: Potential outcomes is all about hypothetical [counterfactuals]{.alert}
-- More specifically: Comparing factual and the counterfactual states
-- [Core assumption]{.alert}: Every unit in the population has a potential outcome $Y_i$ under each possible treatment condition
-- For a binary treatment $D$ (received = $1$, not received = $0$), we speak of treatment and control
-- Causal effects can only be identified in comparison of different treatment states at the unit level: $\tau_i = Y_i(D_i = 1) − Y_i(D_i = 0)$
-:::
-
-## An example
-
-:::{style="margin-top: 50px; font-size: 32px;"}
-:::{.callout-note title="Experiment setup"}
-- We have a sample of $N = 1000$ students. Our outcome of interest, $Y_i$, is knowledge about counterfactual causality measured by test scores in a quiz on causal inference 
-- The treatment of interest, $D_i$, is attending a 75-minute talk titled "Why experiments?" 
-- Assignment of treatment status equals actual receipt of treatment, $z_i = d_i$ 
-- Students’ potential outcomes under the control, $Y_i(0)$, range between 20 and 80 
-- Individual treatment effects, $\tau_i$, range between 0 and 20 
-- Potential outcomes under the treatment, $Y_i(1)$, range between 20 and 100
-:::
-:::
-
-## Potential outcomes
-
-:::{style="margin-top: 50px; font-size: 26px; text-align: center;"}
-![](figures/potential_outcomes.png){width="40%"}
-
-What if students took the class? What if they didn’t? 
-Potential Outcomes under treatment and control plus idiosyncratic treatment effects
-:::
-
-## The fundamental problem of causal inference
-
-:::{style="margin-top: 50px; font-size: 23px;"}
-:::{.columns}
-:::{.column width=50%}
-- We never observe more than [one potential outcome]{.alert} for a given unit at a time!
-- Two solutions:
-  - [Scientific solution]{.alert}: Take the same unit and it expose it to both treatments at different points in time
-  - [Statistical solution]{.alert}: Randomly assign units to treatments and observe the differences in outcomes
-- The latter is the [randomised controlled trial (RCT)]{.alert} 🤓
-- Why? Under randomisation: 
-  - $Y_i(0), Y_i(1) \perp D_i$ for all $i = 1, ..., N$
-  - [$X_i \perp D_i$ for all $i = 1, ..., N$]{.alert} (no confounding bias! 😎)
-:::
-
-:::{.column width=50%}
-:::{style="text-align: center;"}
-![](figures/fundamental_problem.png){width="100%"}
-:::
-:::
-:::
-:::
 
 # Course overview and logistics `r emo::ji('open_book')` `r emo::ji('books')` `r emo::ji('computer')` {background-color="#2d4563"}
 
@@ -509,13 +428,13 @@ Potential Outcomes under treatment and control plus idiosyncratic treatment effe
 :::: {.columns}
 ::: {.column width="50%"}
 ::: {style="font-size: 22px;"}
-- Design rigorous experiments with proper randomisation procedures and sample sizing calculations
-- Create pre-analysis plans (PAP) and apply appropriate statistical methods for experimental analysis
-- Produce reproducible reports using [Quarto](https://quarto.org/)
-- Evaluate experimental designs, identifying potential limitations 
-- Manage unexpected data challenges, such as attrition and non-compliance
-- Understand ethical considerations in experimental design
-- Develop analytical skills through practical problem sets and discussion sessions
+- [Design rigorous experiments]{.alert} with proper randomisation procedures and sample sizing calculations
+- Create [pre-analysis plans (PAP)]{.alert} and apply appropriate statistical methods for experimental analysis
+- Produce [reproducible reports]{.alert} using [Quarto](https://quarto.org/)
+- [Evaluate experimental designs]{.alert}, identifying potential limitations 
+- Manage [unexpected data challenges]{.alert}, such as attrition and non-compliance
+- Understand [ethical considerations]{.alert} in experimental design
+- Develop [analytical skills]{.alert} through practical problem sets and discussion sessions
 :::
 :::
 

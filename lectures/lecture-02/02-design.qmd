@@ -1,0 +1,90 @@
+---
+title: QTM 385 - Experimental Methods
+subtitle: Lecture 2 - The Research Design Process
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: Emory University
+format:
+  clean-revealjs:
+    self-contained: true
+    code-overflow: wrap
+    footer: "[Research Design](https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-02/02-design.html/)"
+bibliography: references.bib
+transition: slide
+transition-speed: default
+scrollable: true
+engine: jupyter
+revealjs-plugins:
+  - fontawesome
+  - multimodal
+editor:
+  render-on-save: true
+---
+
+# Hello, everyone! 👋 <br> Nice to meet you again! 😊 {background-color="#2d4563"}
+
+# Recap and lecture overview 📚 {background-color="#2d4563"}
+
+## Brief recap
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+
+:::{.columns}
+:::{.column width="50%"}
+### About the course
+
+- This is an applied course on experimental methods! 🤓
+- All materials, including lectures, code, and assignments, are available online
+  - Course website: <https://danilofreire.github.io/qtm385/>
+  - GitHub repository: <https://github.com/danilofreire/qtm385>
+- About me: Danilo Freire, VAP in QTM
+  - Email: <danilo.freire@emory.edu>
+  - Office hours: At your convenience, just send me an email first
+- Teaching philosophy: Learning by doing, participation is always welcome, and I'm here to help you out! 😉
+:::
+
+:::{.column width="50%"}
+### Last week
+
+- We saw a brief history of experimental methods and their main characteristics
+  - Key milestones from Petrarch (1394) to modern RCTs, including James Lind's scurvy experiment and the first psychological experiments by Pierce
+- We also saw the main types of experiments
+  - Lab experiments, field experiments, and natural experiments
+  - We discussed the advantages and disadvantages of each type
+- Finally, we briefly discussed the distinction between correlation and causation
+- Key tools: R/Python, GitHub, Quarto, and Jupyter Notebooks
+- Assignments: Problem sets (50%), pre-analysis plan (20%), and final project (30%), with a late policy and collaboration guidelines
+:::
+:::
+:::
+
+## Course website and materials
+
+:::{style="margin-top:30px; font-size:22px; text-align:center;"}
+
+[![](figures/website.png)](#){data-modal-type="iframe" data-modal-url="https://danilofreire.github.io/qtm385/"}
+
+Click on the image to access the course website! 🌐
+
+<https://danilofreire.github.io/qtm385/>
+:::
+
+## Today's lecture 📅
+### The research design process: Questions and credibility
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+
+:::{.columns}
+:::{.column width="50%"}
+- What makes a research question good?
+- The importance of theory (there's no such thing as a theory-free observation!)
+- Designing and selecting your treatment
+- How to interpret your findings carefully
+- The importance of transparency and reproducibility
+:::
+
+:::{.column width="50%"}
+- The research design process
+- [EGAP research design form]()
