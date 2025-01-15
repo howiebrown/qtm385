@@ -27,7 +27,7 @@ editor:
 
 # Recap and lecture overview 📚 {background-color="#2d4563"}
 
-## Brief recap
+## Welcome back! 🎉
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 
@@ -49,10 +49,11 @@ editor:
 ### Last week
 
 - We saw a brief history of experimental methods and their main characteristics
-  - Key milestones from Petrarch (1394) to modern RCTs, including James Lind's scurvy experiment and the first psychological experiments by Pierce
+  - Key milestones from Petrarch (1394) to modern RCTs
 - We also saw the main types of experiments
-  - Lab experiments, field experiments, and natural experiments
-  - We discussed the advantages and disadvantages of each type
+  - Lab Experiments: Conducted in controlled environments with high internal validity
+  - Field Experiments: Take place in real-world settings, offering higher external validity
+  - Natural Experiments: Utilise naturally occurring variations, providing less control but valuable insights
 - Finally, we briefly discussed the distinction between correlation and causation
 - Key tools: R/Python, GitHub, Quarto, and Jupyter Notebooks
 - Assignments: Problem sets (50%), pre-analysis plan (20%), and final project (30%), with a late policy and collaboration guidelines
@@ -71,10 +72,30 @@ Click on the image to access the course website! 🌐
 <https://danilofreire.github.io/qtm385/>
 :::
 
+## Textbooks
+
+:::{style="margin-top: 50px; font-size: 24px; text-align: center;"}
+:::{.columns}
+:::{.column width="50%"}
+### Required: Alan Gerber and Donald Green - Field Experiments
+
+![](figures/gerber_green.jpg){width="50%"}
+:::
+
+:::{.column width="50%"}
+### Recommended: Douglas C. Montgomery - Design and Analysis of Experiments
+
+![](figures/design.jpg)
+:::
+:::
+
+Lots of additional readings included [in the syllabus](https://github.com/danilofreire/qtm385/blob/main/syllabus.pdf) 😊
+:::
+
 ## Today's lecture 📅
 ### The research design process: Questions and credibility
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 
 :::{.columns}
 :::{.column width="50%"}
@@ -83,8 +104,270 @@ Click on the image to access the course website! 🌐
 - Designing and selecting your treatment
 - How to interpret your findings carefully
 - The importance of transparency and reproducibility
+- The research design process
+- [EGAP research design form](https://danilofreire.github.io/qtm385/design-form.html): A guide to help you think through the key components of your research design
+- Introduction to [DeclareDesign](https://declaredesign.org/) and the [MIDA]{.alert} framework
+- Brief overview of pre-registration and pre-analysis plans
 :::
 
 :::{.column width="50%"}
-- The research design process
-- [EGAP research design form]()
+:::{style="text-align:center; font-size: 16px;"}
+[![](figures/mida.png)](#){data-modal-type="iframe" data-modal-url="https://book.declaredesign.org/introduction/what-is-a-research-design.html#mida-the-four-elements-of-a-research-design"}
+
+<https://book.declaredesign.org/introduction/what-is-a-research-design.html#mida-the-four-elements-of-a-research-design>
+:::
+:::
+:::
+:::
+
+# But first... <br><br> Let's do an experiment right now! 😄 {background-color="#2d4563"}
+
+## Instructions
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+
+- Come here to the front of the room (one at a time!) 
+- You will look at my screen and answer a question
+- [Please don't say the answer out loud and don't give hints to others!]{.alert}
+- Let's see what happens! 😊
+
+<br>
+<span style="color: white;">https://forms.gle/xUL39k7ngY2kXYJC7</span>
+:::
+
+# Let's discuss the results! 📊 {background-color="#2d4563"}
+
+# What makes a research question good? 🤔 {background-color="#2d4563"}
+
+## The importance of a good research question
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+
+:::{.columns}
+:::{.column width="50%"}
+- The answer to a good research question should produce [knowledge that people will care about]{.alert}
+- Addressing the question should (help) solve a problem, make a decision, or clarify/challenge our understanding of the world
+- But [an interesting question is not enough]{.alert}
+- A good research design is a [practical plan for research]{.alert} that makes the best use of available resources and produces a credible answer 
+- The quality of a research design can be assessed by [how well it produces results that can be used to guide policy and improve science]{.alert}: 
+  - A great research design produces results that clearly point in certain directions that we care about 
+  - A poor research design produces results that leave us in the dark --- results with confusing interpretation
+:::
+
+:::{.column width="50%"}
+:::{style="text-align:center;"}
+![](figures/slide_1.jpg)
+
+Source: University of Cambridge
+:::
+:::
+:::
+:::
+
+## Causality and experiments
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+
+-  As researchers, we are interested in research questions [about how the world works]{.alert}
+- There are a number of different types of questions that we may want to answer. In academia, they are often divided into two broad categories:
+
+  - [Descriptive questions]{.alert}: Descriptions of a given phenomena: e.g., “_how do teachers allocate their time during a school day?_”
+  - [Causal questions]{.alert}: Questions about _how_ $X$ affects $Y$: e.g., “_Does providing vocational training to migrants improve their economic integration in the receiving country?_”
+
+- Then we can move on to questions about why? $\rightarrow$ i.e., knowing the effect of a cause is necessary before moving on to understanding the causes of an effect.
+- (Next sessions: more on about what we mean by causality and how experiments give us leverage to make causal claims.)
+:::
+
+## Theory
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+
+:::{.columns}
+:::{.column width="50%"}
+- What is the phenomenon we want to explain?
+  - [Our outcome]{.alert} (we are going to call it $Y$)
+
+- Does the cause we theorise lead to observing changes in $Y$?
+  - [Our treatment]{.alert} (in the context of experiments) (we are going to call it $T$)
+  - We will use $X$ to refer to [background variables]{.alert} (covariates)
+
+- What is the theory of change?
+  
+- We are ultimately interested in how [two theoretical concepts are related]{.alert}, measured
+by [observed variables]{.alert} $T$ (our treatment) and $Y$ (our outcomes)
+
+:::{.incremental}
+- [Why is theory important, then?]{.alert}
+:::
+:::
+
+:::{.column width="50%"}
+:::{style="text-align:center;"}
+![](figures/theory.jpg)
+
+Source: <https://www.sciencedirect.com/topics/materials-science/statistical-design>
+:::
+:::
+:::
+:::
+
+## The importance of theory {.allowframebreaks}
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+
+:::{.incremental}
+- [There is no such thing as "just doing an experiment"]{.alert} 🧐
+- All research design involves theory, whether [implicit or explicit]{.alert}
+- Our questions are value laden: For example, social scientists studied marijuana use in the 1950s as a form of "deviance", the questions focused on "why are people making such bad decisions?" or "how can policy makers prevent marijuana use?"
+   
+- Why do the research? We might want to change how scientists explain the world and/or change the policy decisions in (a) one place and time and/or (b) in other places and times
+  
+- Research focused on learning the causal effect of $T$ on $Y$ requires a [model of the world]{.alert}: *how* might intervention $T$ might have an effect on some outcome $Y$, and *why*, and *how large* might be the effect.  It helps us think about how a different intervention or targeting different recipients might lead to different results.
+
+- Our theories and models are important not just for generating hypotheses, but for informing [design]{.alert} and [strategies for inference]{.alert}
+
+- Designing research will often clarify where we are less certain about our theories.  Our theories will point to problems with our design. And questions arising from the process of design may indicate a need for more work on explanation and mechanism
+:::
+:::
+
+## Richard Feynman on the experimental method
+
+::: {style="margin-top: 30px; font-size: 22px; text-align: center;"}
+[![](figures/feynman.png){width="70%" style="cursor: pointer;"}](https://www.youtube.com/embed/b240PGCMwV0){data-modal-type="iframe" data-modal-width="90vw" data-modal-height="90vh"}
+
+[Click on the image to watch the video! 📺](https://www.youtube.com/watch?v=b240PGCMwV0)
+:::
+
+## Designing or selecting your treatment 
+
+:::{style="margin-top: 40px; font-size: 24px;"}
+
+- [Operationalisation]{.alert}: The process of translating theoretical concepts into measurable variables.
+  - Example: Turning the concept of "social isolation" into a measurable variable such as the frequency of social interactions
+- [Key Questions]{.alert}:
+  - How will we measure our outcomes?
+  - What indicators will be used to represent the underlying concept?
+  - How will we manipulate the cause of interest?
+  - What intervention or treatment will be implemented?
+- Importance of Alignment: 
+  - The research design must align with the theoretical framework to ensure that the study is addressing the intended questions
+:::
+
+## Let's consider the example from our experiment practicum
+
+:::{style="margin-top: 30px; font-size: 28px;"}
+:::{.columns}
+:::{.column width="50%"}
+- What is the outcome of interest ($Y$)?
+
+- What is the cause of interest ($T$)?
+
+- What can be a theory that yields to this experimental design?
+
+- What can be the main hypothesis?
+
+- How can we measure our outcomes?
+
+<br>
+
+- [What do you think?]{.alert}
+:::
+
+:::{.column width="50%"}
+:::{style="text-align:center; margin-top: -45px;"}
+![](figures/experiment-qtm385.png)
+:::
+:::
+:::
+:::
+
+## Measuring treatments
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width="50%"}
+
+- [Can we directly manipulate]{.alert} $T$? (underlying treatment concept of interest)
+
+  - Ethical, logistical and other types of considerations can limit our ability to manipulate all of the indicators of $T$
+  - At best, we may be able to change [some of its indicators]{.alert}
+  - We design a treatment, $T$, to do so
+  
+- [How does T relate to]{.alert} $T$?
+
+  - But T can be manipulating other things (bundled treatments)
+
+- [Did everyone receive]{.alert} $T$?
+
+  - Measure compliance
+:::
+
+:::{.column width="50%"}
+:::{style="text-align:center;"}
+![](figures/adherence.png)
+
+Source: World Health Organization, 2003 
+:::
+:::
+:::
+:::
+
+## Thinking about the treatment from the practicum...
+### How do you feel about the world?
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Now think of yourselves as the researchers  
+
+- In pairs or groups of three:
+
+  - Generate hypothesis on potential heterogeneous effects 
+  - Generate expected effect size 
+  - Discuss theories behind the hypothesis and expected effect size, with emphasis on the importance of theory 
+  - Other ways of measuring the outcome or mode of administering the treatment?
+:::
+
+:::{.column width="50%"}
+:::{style="text-align:center; margin-top: -30px;"}
+![](figures/experiment-qtm385.png)
+:::
+:::
+:::
+:::
+
+## Measuring outcomes
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- We often [cannot directly observe the true value of the outcome]{.alert} concept for most of the outcomes we are interested in
+
+- Examples:
+
+  - Correct answers to problems (indicators) for underlying mathematical aptitude (the actual phenomenon)
+  - Days without food (indicators) for hunger (the actual phenomenon)
+  - Reports of bribes (indicators) for corruption (the actual phenomenon)
+  
+- Moreover, the underlying outcome concept [may be even under debate]{.alert} (e.g., democracy)
+
+-  If our indicators don’t measure the underlying concept that we’re interested in, then [we may not be able to learn very much, even if we have an otherwise very sound experiment]{.alert}
+:::
+
+## To sum up:
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+- Articulate and refine your research question:
+  - Clearly define the problem you are addressing
+  - Consider the implications of different possible answers
+- Develop your research design:
+  - Plan your intervention and data collection methods
+  - Consider the resources available and the feasibility of the design
+- Plan your analysis:
+  - State and justify your hypotheses
+  - Pre-register your analysis plan to enhance credibility
+- Implement your intervention and collect data: 
+  - Execute your research design
+  - Ensure data quality and compliance with the intervention
+- Analyse your data and write up your results:
+  - Conduct statistical analyses
+  - Interpret the findings in light of the research question and theoretical framework
+:::
