@@ -1,4 +1,4 @@
-# QTM 385 - Principles of Experimental Design
+# QTM 385 - Experimental Methods
 
 ## Course Description
 
