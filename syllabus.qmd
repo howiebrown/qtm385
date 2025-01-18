@@ -174,7 +174,7 @@ Weekly suggested readings:
 
 Required readings:
 
-- Lecture slides: The Research Design Process: Testing Theories with Experiments.
+- Lecture slides: [The Research Design Process: Testing Theories with Experiments](https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-02/02-design.html).
 - Blair, G., Cooper, J., Coppock, A., & Humphreys, M. (2019). [Declaring and Diagnosing Research Designs](https://doi.org/10.1017/S0003055419000194). American Political Science Review, 113(3), 838-859.
 - Card, D., DellaVigna, S., & Malmendier, U. (2011). [The Role of Theory in Field Experiments](https://pubs.aeaweb.org/doi/pdf/10.1257%2Fjep.25.3.39). Journal of Economic Perspectives, 25(3), 39-62.
 - Problem Set 01 assigned.
