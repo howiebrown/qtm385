@@ -100,7 +100,7 @@ Lots of additional readings included [in the syllabus](https://github.com/danilo
 :::{.columns}
 :::{.column width="50%"}
 - What makes a research question good?
-- The importance of theory (there's no such thing as a theory-free observation!)
+- The importance of theory
 - Designing and selecting your treatment
 - How to interpret your findings carefully
 - The importance of transparency and reproducibility
@@ -249,7 +249,7 @@ Source: <https://www.sciencedirect.com/topics/materials-science/statistical-desi
   - What indicators will be used to represent the underlying concept?
   - How will we manipulate the cause of interest?
   - What intervention or treatment will be implemented?
-- Importance of Alignment: 
+- [Importance of Alignment]{.alert}: 
   - The research design must align with the theoretical framework to ensure that the study is addressing the intended questions
 :::
 
@@ -293,9 +293,9 @@ Source: <https://www.sciencedirect.com/topics/materials-science/statistical-desi
   - At best, we may be able to change [some of its indicators]{.alert}
   - We design a treatment, $T$, to do so
   
-- [How does T relate to]{.alert} $T$?
+- [How does our actual treatment relate to]{.alert} $T$?
 
-  - But T can be manipulating other things (bundled treatments)
+  - But our treatment can be manipulating other things (bundled treatments)
 
 - [Did everyone receive]{.alert} $T$?
 
@@ -310,6 +310,22 @@ Source: World Health Organization, 2003
 :::
 :::
 :::
+:::
+
+## Measuring outcomes
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- Similarly, we often [cannot directly observe the true value of the outcome]{.alert} concept for most of the outcomes we are interested in
+
+- Examples:
+
+  - Correct answers to problems (indicators) for underlying mathematical aptitude (the actual phenomenon)
+  - Days without food (indicators) for hunger (the actual phenomenon)
+  - Reports of bribes (indicators) for corruption (the actual phenomenon)
+  
+- Moreover, the underlying outcome concept [may be even under debate]{.alert} (e.g., democracy)
+
+-  If our indicators don’t measure the underlying concept that we’re interested in, then [we may not be able to learn very much, even if we have an otherwise very sound experiment]{.alert}
 :::
 
 ## Thinking about the treatment from the practicum...
@@ -336,38 +352,647 @@ Source: World Health Organization, 2003
 :::
 :::
 
-## Measuring outcomes
+# Pre-registration and pre-analysis plans 📝 {background-color="#2d4563"}
 
-:::{style="margin-top: 30px; font-size: 26px;"}
-- We often [cannot directly observe the true value of the outcome]{.alert} concept for most of the outcomes we are interested in
+## Bias in published research against null results
 
-- Examples:
+:::{style="margin-top: 30px; font-size: 24px;"}
 
-  - Correct answers to problems (indicators) for underlying mathematical aptitude (the actual phenomenon)
-  - Days without food (indicators) for hunger (the actual phenomenon)
-  - Reports of bribes (indicators) for corruption (the actual phenomenon)
+:::{.columns}
+:::{.column width="50%"}
+- Anticipating or facing difficulties in getting published, manuscripts with
+  null results are never submitted for review or put away in a ["file drawer"
+  after several rejections]{.alert}
   
-- Moreover, the underlying outcome concept [may be even under debate]{.alert} (e.g., democracy)
+- We all face [incentives to change your specifications]{.alert}, measurements, or even
+  hypotheses to get a statistically significant result ($p$-hacking) to improve
+  chances of publication
 
--  If our indicators don’t measure the underlying concept that we’re interested in, then [we may not be able to learn very much, even if we have an otherwise very sound experiment]{.alert}
+- Even people not facing these incentives make many decisions when they analyse
+  data: handling missing values and duplicate observations, creating scales,
+  etc. And these choices can be consequential
+
+- Overall result:  [reduced credibility for individual pieces of research]{.alert} and
+  (rightly) reduced confidence in whether we actually know what we claim to
+  know
 :::
 
-## To sum up:
+:::{.column width="50%"}
+:::{style="text-align: center; font-size: 18px;"}
+![](figures/power-posing.jpg){width="50%"}
+
+Amy Cuddy demonstrating her theory of "power posing". It could never be replicated. [Ted Talk](https://www.ted.com/talks/amy_cuddy_your_body_language_may_shape_who_you_are?language=en) with 74 million views!
+:::
+:::
+:::
+:::
+
+## The reproducibility crisis in medicine
+
+:::{style="margin-top: 30px; text-align: center; font-size: 16px;"}
+![](figures/ioannidis.png){width="60%"}
+
+<https://doi.org/10.1371/journal.pmed.0020124>
+:::
+
+## The reproducibility crisis in psychology
+
+:::{style="margin-top: 30px; text-align: center; font-size: 16px;"}
+![](figures/science.png){width="60%"}
+
+<https://www.science.org/doi/10.1126/science.aac4716>
+:::
+
+## The reproducibility crisis in political science
+
+:::{style="margin-top: 30px; text-align: center; font-size: 16px;"}
+![](figures/jop.png){width="60%"}
+
+<https://www.journals.uchicago.edu/doi/abs/10.1086/734279?journalCode=jop>
+:::
+
+## The reproducibility crisis in economics
+
+:::{style="margin-top: 30px; text-align: center; font-size: 16px;"}
+![](figures/econ.png){width="50%"}
+
+<https://onlinelibrary.wiley.com/doi/full/10.1111/joes.12598>
+:::
+
+## The reproducibility crisis... everywhere?
+
+:::{style="margin-top: 30px; text-align: center; font-size: 16px;"}
+![](figures/everywhere.png){width="50%"}
+
+<https://onlinelibrary.wiley.com/doi/full/10.1002/jrsm.1703>
+:::
+
+
+## Not even our code is reproducible
+
+:::{style="margin-top: 30px; font-size: 16px; text-align: center;"}
+
+![](figures/sdata.png){width="45%"}
+
+<https://www.nature.com/articles/s41597-022-01143-6>
+:::
+
+## Towards review of design rather than outcomes
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+
+:::{.columns}
+:::{.column width="50%"}
+- One part of solving this problem is to [focus on the design]{.alert}, rather than the
+  outcomes
+  
+- The bias against null results can be overcome by [reviewing the design]{.alert}, prior
+  to learning the results
+
+- A good design executed well will produce credible research, which might be a
+  null result. [We want credible and actionable null results]{.alert}
+
+- Reviews of designs are also an opportunity to [improve the research before it
+  is implemented]{.alert}
+:::
+
+:::{.column width="50%"}
+:::{style="font-size: 20px;"}
+![](figures/olken.png){width="100%"}
+
+"...if you gave the PAP to two different programmers and asked each to prepare the data for the primary dependent/independent variable(s), they should both be able to do so without asking any questions, and they should both be able to get the same answer." [Olken, 2015](https://www.aeaweb.org/articles?id=10.1257/jep.29.3.61)
+
+:::
+:::
+:::
+:::
+
+## Pre-registration of analysis plans and research designs
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+
+- Pre-registration is the [filing of your research design and hypotheses with a
+  publicly-accessible repository]{.alert}.  EGAP hosts one that you can use for free
+  (currently on [OSF.io](https://osf.io/registries/egap/discover) using the [EGAP registration form](https://egap.github.io/learningdays-resources/Exercises/design-form.html/))
+
+- Pre-registration [does not preclude later exploratory analyses]{.alert} that were not
+  stated in advance.  You just have to clearly distinguish between the two
+
+- Even if you will be submitting a paper with results rather than a design to
+  an academic journal or you are primarily interested in a final report with findings
+  for a policy audience, there are important advantages to you and to other
+  researchers from pre-registering your research
+  - You can learn about other research, completed and in progress; others can
+     learn about yours.  We can learn about studies that produced null results
+  - It forces you to state your hypotheses and plan of analysis in advance of
+     seeing the results, which limits $p$-hacking
+:::
+
+## Evidence in Governance and Politics (EGAP)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
-- Articulate and refine your research question:
-  - Clearly define the problem you are addressing
-  - Consider the implications of different possible answers
-- Develop your research design:
-  - Plan your intervention and data collection methods
-  - Consider the resources available and the feasibility of the design
-- Plan your analysis:
-  - State and justify your hypotheses
-  - Pre-register your analysis plan to enhance credibility
-- Implement your intervention and collect data: 
-  - Execute your research design
-  - Ensure data quality and compliance with the intervention
-- Analyse your data and write up your results:
-  - Conduct statistical analyses
-  - Interpret the findings in light of the research question and theoretical framework
+
+- [EGAP]{.alert} is a network of researchers and practitioners who conduct experiments to learn about effective governance and politics
+- They have long been advocates of pre-registration and reproducible research, such as with their [Metaketa initiative](https://egap.org/our-work/the-metaketa-initiative/)
+- [Disclosure]{.alert}: I am a member of EGAP and have been involved in several of their projects (including the courses on experimental design 😉)
+- They have lots of [useful resources](https://egap.org/resources/) for researchers interested in experimental methods, some of them we will be using in this course. More in <https://egap.org/>
+
+:::{style="text-align: center;"}
+[![](figures/egap.png){width="60%"}](https://egap.org/)
 :::
+:::
+
+## The EGAP research design form
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- The [EGAP research design form](https://egap.github.io/learningdays-resources/Exercises/design-form.html) is a guide to help you think through the key components of your research design
+- It shows the main parts of a pre-analysis plan, and it is a good blueprint for your own future experiments
+- We will be using it in our course, and you can access it [here](https://egap.github.io/learningdays-resources/Exercises/design-form.html) or [on our website](https://danilofreire.github.io/qtm385/design-form.html)
+- We will have a few sessions dedicated to discussing pre-analysis plans, but I would like to introduce you to the form today (so you can start thinking about your final project!)
+:::
+
+## The EGAP research design form
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+
++-------------------+--------------------------------------------------+
+| **Section 1:      |                                                  |
+| Introduction**    |                                                  |
++===================+==================================================+
+| 1.  **Researcher  |                                                  |
+|     name**        |                                                  |
++-------------------+--------------------------------------------------+
+| 2.  **Research    |                                                  |
+|     project       |                                                  |
+|     title**       |                                                  |
++-------------------+--------------------------------------------------+
+| 3.  **One         |                                                  |
+|     sentence      |                                                  |
+|     summary of    |                                                  |
+|     your specific |                                                  |
+|     research      |                                                  |
+|     question**    |                                                  |
++-------------------+--------------------------------------------------+
+| 4.  **General     | i. Why should someone who is not an academic care|
+|     motivation**  | care about the results of this research? [1      |
+|                   | paragraph]                                       |
+|                   | ii. What policy decision(s) will your research   |
+|                   | help inform? [1 paragraph]                      |
++-------------------+--------------------------------------------------+
+| 5.  **Theoretical | i. What theoretical questions can this research  |
+|     motivation**  | shed light on? [1 paragraph]                     |
+|                   | ii. Key debate(s)/literature(s) that will be     |
+|                   | informed by the answer to your research question |
+|                   | [1 paragraph]                                    |
++-------------------+--------------------------------------------------+
+| 6.  **Primary     | i. What are the key parameter/estimands the      |
+|     hypotheses**  | research design seeks to estimate? What sign     |
+|                   | and/or magnitude is predicted by primary         |
+|                   | hypotheses for each parameter/estimand? [1-2     |
+|                   | paragraphs]                                      |
+|                   | ii. What is the logic or theory of change behind |
+|                   | the primary hypotheses [1-2 paragraphs]          |
+|                   | iii. What are the key pieces in the relevant     |
+|                   | academic literature that inform your hypotheses? |
+|                   | [2-3 pieces]                                     |
++-------------------+--------------------------------------------------+
+| 7. **Secondary    | i. What are the secondary paramater/estimands the|
+|    hypotheses**   | research design seeks to estimate? What sign     |
+|                   | and/or magnitude is predicted by the secondary   |
+|                   | hypotheses for each parameter/estimand [These may|
+|                   | be conditional effects for subgroups or          |
+|                   | hypotheses about additional outcomes or cross-   |
+|                   | randomized treatments.]                          |
+|                   | ii. What is the logic or theory of change behind |
+|                   | each secondary hypothesis? [Explain what effects |
+|                   | we should expect if the theory behind your       |
+|                   | primary hypothesis is correct.]                  |
++-------------------+--------------------------------------------------+
+| 8.  **Alternative | i. What alternative theories could explain the   |
+|     explanations  | results?                                         |
+|     if results are| ii. Hypothesis for an alternative outcome        |
+|     consistent    | (or other subgroups) that would be consistent    |
+|     with          | only with the alternative explanation and not the|
+|     hypotheses**  | logic behind your primary hypothesis.            |
++-------------------+--------------------------------------------------+
+| 9.  **Alternative | i. What alternative theories could explain the   |
+|     explanations  | results?                                         |
+|     if results are|                                                  |
+|     *inconsistent*|                                                  |
+|     with          |                                                  |
+|     hypotheses**  |                                                  |
++-------------------+--------------------------------------------------+
+
++-------------------+--------------------------------------------------+
+| **Section 2:      |                                                  |
+| Population and    |                                                  |
+| Sample**          |                                                  |
++===================+==================================================+
+| 10.  **Population |                                                  |
+|     of interest** |                                                  |
++-------------------+--------------------------------------------------+
+| 11. **Where and   | i. Does this match up to your population of      |
+|     when will your| interest, or are there conditions that make this |
+|     study take    | study context different?                         |
+|     place?**      |                                                  |
++-------------------+--------------------------------------------------+
+| 12. **Sample      | i. How is this sample selected? Be specific about|
+|     size**        | the procedure.                                   |
++-------------------+--------------------------------------------------+
+| 13. **Consent**   | i. How will you obtain informed consent? If you  |
+|                   | will not, what is the justification?             |
+|                   | ii. Is this population vulnerable to being       |
+|                   | coerced into participating in the study?         |
++-------------------+--------------------------------------------------+
+| 14. **Ethics**    | i. Is the sample size large enough that you have |
+|                   | sufficient power for your research conclusions to|
+|                   | be credible and useful?                          |
+|                   | ii. Is the sample size no larger than necessary  |
+|                   | for the research?                                |
+|                   | iii. Can the research (results) be used to target|
+|                   | people or make people more vulnerable?           |
++-------------------+--------------------------------------------------+
+
++-------------------+--------------------------------------------------+
+| **Section 3:      |                                                  |
+| Intervention**    |                                                  |
++===================+==================================================+
+| 15. **Status Quo**| i. Describe the status quo--what are the current |
+|                   | conditions in terms of the outcomes you hope to  |
+|                   | change? What aspects of the intervention already |
+|                   | exist, if any?                                   |
++-------------------+--------------------------------------------------+
+| 16.               | i. Describe your intervention(s)                 |
+|   **Intervention**| ii. What is already known about the effect of the|
+|                   | proposed intervention relative to the status quo?|
+|                   | Is there credible evidence on the question?      |
++-------------------+--------------------------------------------------+
+| 17. **Control**   | i. Describe the control condition                |
+|                   | ii. Is the control condition a pure control (no  |
+|                   | intervention at all) or a placebo? What is the   |
+|                   | placebo contition designed to control for?       |
++-------------------+--------------------------------------------------+
+| 18. **Units**     | i. To what units (level) will the intervention be|
+|                   | applied? Individual, classroom, school, village, |
+|                   | municipality, etc.                               |
+|                   | ii. Is this the same level at which outcomes will|
+|                   | be measured? If not, how will you address the    |
+|                   | different levels if they do not perfectly        |
+|                   | overlap?                                         |
++-------------------+--------------------------------------------------+
+| 19. **Compliance**| i. What does it mean to "take" (comply with) the | 
+|                   | the intervention?                                |
+|                   | ii. If the intervention is a prgram, how much    |
+|                   | someone need to attend (showing up once?         |
+|                   | finishing the program?) in order to count as     |
+|                   | having attended?                                 |
++-------------------+--------------------------------------------------+
+| 20. **Non-        | i. Is there any concern with non-compliance      |
+| Compliance**      | (either taking the intervention if assigned to   |
+|                   | control/placebo or failing to take the           |
+|                   | intervention if assigned to treatment)?          |
++-------------------+--------------------------------------------------+
+| 21. **Ethics**    | i. Is the control condition no worse than the    |
+|                   | status quo, according to the best evidence       |
+|                   | available?                                       |
+|                   | ii. Are there concerns that participants may be  |
+|                   | forced to comply wiht the intervention?          |
+|                   | iii. What are the risks and magnitude of         |
+|                   | potentially negative effects of the treatment?   |
+|                   | Are such risks concentrated on a particular      |
+|                   | subset of your population?                       |
++-------------------+--------------------------------------------------+
+
++-------------------+--------------------------------------------------+
+| **Section 4:      |                                                  |
+| Outcome and       |                                                  |
+| Covariates**      |                                                  |
++===================+==================================================+
+| 22. **Primary     | i. What is your primary outcome?                 |
+| Outcome**         |                                                  |
++-------------------+--------------------------------------------------+
+| 23.               | i. How will it be measured? (Give the actual text|
+| **Measurement**   | of the survey question and response options, if  |
+|                   | using a survey measure. Is the outcome           |
+|                   | continuous, binary, etc.?)                       |
++-------------------+--------------------------------------------------+
+| 24. **Priors**    | i. What is the expected distribution of the      |
+|                   | primary outcome? (This may come from a prior     |
+|                   | study on a similar population or you may have to |
+|                   | make an educated guess).
++-------------------+--------------------------------------------------+
+| 25. **Validity    | i. Is there any concern with untruthful          |
+| and measurement   | reporting? If so, how will you address it?       |
+| error**           |                                                  |
++-------------------+--------------------------------------------------+
+| 26. **Stages**    | i. Will you collect a baseline?                  |
+|                   | ii. Will you collect a midline?                  |
+|                   | iii. Will you collect multiple waves of endline  |
+|                   | measurement?                                     |
+|                   | iv. If you will collect a baseline or midline,   |
+|                   | how will you find the same respondents (minimize |
+|                   | attrition?)                                      |
++-------------------+--------------------------------------------------+
+| 27. **Covariates**| i. What covariate data do you need, including for|
+|                   | subgroup analysis? How will covariates be        |
+|                   | measured?                                        |
+|                   | ii. What addtional covariates (if any) will you  |
+|                   | measure?                                         |
+|                   | iii. What additional outcomes or covariates will |
+|                   | you collect to distinguish between your          |
+|                   | explanation and alternatives if your findings are|
+|                   | consistent with your hypothesis?                 |
++-------------------+--------------------------------------------------+
+| 28. **Ethics**    | i. Will data collection be onerous (time, effort)|
+|                   | or painful (physically, emotionally) for any     |
+|                   | respondents?                                     |
+|                   | ii. Are these costs necessary? Have they been    |
+|                   | minimized?                                       |
+|                   | iii. Are they outweighed by the potential        |
+|                   | benefits of the research to society?             |
++-------------------+--------------------------------------------------+
+
++-------------------+--------------------------------------------------+
+| **Section 5:      |                                                  |
+| Randomization**   |                                                  |
++===================+==================================================+
+| 29.               | i. Complete/simple, block, cluster, factorial    |
+| **Randomization   | etc.                                             |
+| strategy**        |                                                  |
++-------------------+--------------------------------------------------+
+| 30. **Blocks**    | i. What are they, how many blocks, how many units|
+|                   | per block?                                       |
++-------------------+--------------------------------------------------+
+| 31. **Clusters**  | i. What are they, how many clusters, how many    |
+|                   | units per cluster?                               |
+|                   | ii. If you have clusters, what is the intra-class|
+|                   | correlation (ICC)?                               |
+|                   | iii. Is clustering strictly necessary, or could  |
+|                   | you randomize at the individual level?           |
++-------------------+--------------------------------------------------+
+
+
++-------------------+--------------------------------------------------+
+| **Section 6:      |                                                  |
+| Analysis**        |                                                  |
++===================+==================================================+
+| 32.               | i. What is your estimator?                       |
+| **Estimator**     |                                                  |
++-------------------+--------------------------------------------------+
+| 33. **Standard    | i. What kind of standard errors will you use?    |
+| Errors**          |                                                  |
++-------------------+--------------------------------------------------+
+| 34. **Test**      | i. If you plan to report a p-value, what kind of |
+|                   | test will you use?                               |
++-------------------+--------------------------------------------------+
+| 35. **Missing     | i. How will you handle missing data?             |
+| Data**            |                                                  |
++-------------------+--------------------------------------------------+
+| 36. **Effect      | i. What is the expected effect size? What is the |
+|     size**        | minimum effect size that would make the study    |
+|                   | worth running? what effect sizes have similar    |
+|                   | studies found?                                   |
++-------------------+--------------------------------------------------+
+| 37. **What is your|                                                  |
+| power?**          |                                                  |
++-------------------+--------------------------------------------------+
+
++-------------------+--------------------------------------------------+
+| **Section 7:      |                                                  |
+| Implementation**  |                                                  |
++===================+==================================================+
+| 38.               | i. How will you conduct the randomization? (on a |
+| **Randomization** | computer in advance, drawing from an urn in      |
+|                   | public, etc.)                                    |
++-------------------+--------------------------------------------------+
+| 39.               | i. Who will implement the intervention?          |                
+| **Implementation**| ii. Are there any dangers to your research team, |
+|                   | including enumerators? How will you minimize     |
+|                   | them?                                            |
+|                   | iii. How will you track the quality of the       |
+|                   | implementation of the intervention?              |
++-------------------+--------------------------------------------------+
+| 40. **Compliance**| i. Who will measure compliance?                  |
++-------------------+--------------------------------------------------+
+| 41. **Data        | i. How will you manage the data? (security,      |
+| management**      | anonymity, etc.)                                 |
++-------------------+--------------------------------------------------+
+:::
+
+# The MIDA framework 📊 {background-color="#2d4563"}
+
+## The MIDA framework
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+
+- Finally, we will briefly introduce the [MIDA framework]{.alert}
+- As we have seen, a good research design is a practical plan for research that makes the best use of available resources and produces a credible answer
+- [But how can we assess the quality of a research design before we implement it?]{.alert}
+- [Simulate it!]{.alert}
+- Luckly, there is a package that does all the hard work for us: [DeclareDesign](https://declaredesign.org/)
+- Helps us be concrete about the stages of research design by allowing us
+  to represent them in code, which then allows us to simulate the stages of research design in order to understand the properties of the statistical estimators and tests that we use.
+:::
+
+## Introduction to DeclareDesign
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- See <https://declaredesign.org/>
+
+- Regardless of the method, research designs have four components
+
+- [MIDA]{.alert}:
+   - [M]{.alert}: Model (of how the world works)
+   - [I]{.alert}: Inquiry
+   - [D]{.alert}: Data strategy
+   - [A]{.alert}: Answer strategy
+
+- Critical insight: Simulation of a research design teaches what answers a research design can find
+
+- Working with simulated data *before data collection* helps prevent errors and oversights
+:::
+
+## Model
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- A model of how [we think the world works]{.alert}, including:
+  - $T$s and $X$s (treatments or focal causal variables like policy interventions and other background variables)
+  - $Y$s (dependent variables)
+  - Relations between variables (potential outcomes, functional forms, auxiliary variables and contexts)
+  - Probability distribution over $X$s if not also over $Y$s.
+
+- [This is the theory!]{.alert}
+  - Codified numerically
+  
+- [The model is wrong by definition]{.alert}. If it were correct, you wouldn't need to do the study
+
+- But without a model, we don’t have a place to start to assess what can be learned
+:::
+
+## Inquiry
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- [An answerable question]{.alert} about the model:
+
+- What is the effect of a treatment $T$ on an outcome $Y$ ?
+
+- Usually a quantity of interest, some summary of the data:
+  - Descriptive: What is the mean of $Y$ in treatment, formally.
+  - Causal: What would be the average difference of $Y$ if we switched treatment
+    to control? If we claimed that $T$ cannot cause $Y$, how much evidence do we
+    have about this claim?
+  - Quantity is the estimand or hypothesis
+  
+- Not all questions that we want to ask are answerable
+  - And the range of inquiries we can ask are limited: how much can we learn
+    from some summary quantity such as the average treatment effect (ATE)?
+:::
+
+## Data
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- [Realise (generate) data on the set of variables]{.alert} (all $X$s, $T$s and $Y$s)
+
+- A function of your model
+
+- Includes both:
+  - Sampling --- how units arrive in your sample
+  - Treatment assignment --- what values of endogenous variables are revealed
+:::
+
+## Answer
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- Given a realization of the data, generate an answer -- an estimate of the quantity of interest (inquiry)
+
+- This is your estimator or test:
+  - Difference-in-means
+  - $t$-test
+  - Regression methods
+  - etc.
+
+- Answer is an estimate of the quantity of interest or $p$-value (inquiry/estimand/test)
+:::
+
+# Let's see an example: Two-arm trial
+
+## Two-arm trial
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- [Two-arm trial]{.alert}: A common design in which units are randomly assigned to one of two conditions (treatment and control)
+- [Model]{.alert}: We have a treatment $T$ that we think might affect an outcome $Y$. We have $N$ units, which we can sample in many ways (simple random sampling, stratified sampling, etc.). We can include background variables $X$ that we think might affect $Y$, but let's keep it simple for now
+- [Inquiry]{.alert}: What is the effect of $T$ on $Y$?
+  - Defined by the average treatment effect (ATE): $\text{ATE} = \frac{1}{N} \sum_{i=1}^N Y_i(1) - \frac{1}{N} \sum_{i=1}^N Y_i(0)$
+- [Data]{.alert}: We randomly assign units to treatment and control, and we measure $Y$ for each unit
+- [Answer]{.alert}: We estimate the ATE using a difference-in-means test
+:::
+
+## Two-arm trial
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+- This is a [Directed acyclic graph (DAG)]{.alert} of the model
+  - [A DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) is a way to represent the model of the world, showing the relationships between variables
+  - An outcome $Y$ is affected by unknown factors $U$ and a treatment $Z$ (the authors use $Z$ instead of $T$)
+  - The measurement procedure $Q$ affects in the sense that it measures a latent outcome and records the measurement in a dataset
+  - No arrows lead into $Z$ because it is randomly assigned
+
+:::{style="text-align: center;"}
+![](figures/two-arm.png){width="50%"}
+
+Source: [Blair et al. (2023)](https://book.declaredesign.org/library/experimental-causal.html#sec-ch18s1)
+:::
+:::
+
+## Declare
+
+:::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
+![](figures/declare.png){width="100%"}
+:::
+
+## Diagnose
+
+:::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
+![](figures/diagnose.png){width="100%"}
+:::
+
+## Design
+
+:::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
+![](figures/design.png){width="100%"}
+:::
+
+## Avaliable models
+
+:::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
+[![](figures/models.png)](#){data-modal-type="iframe" data-modal-url="https://declaredesign.org/"}
+:::
+
+# Wrap-up 🤓 {background-color="#2d4563"}
+
+## Summary
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+### Research design
+
+- Good Research Questions: Produce knowledge that people care about and solve real-world problems
+- Theory: Essential for generating hypotheses, informing design, and guiding inference
+- Operationalisation: Translating theoretical concepts into measurable variables (e.g., social isolation → frequency of interactions)
+- Pre-registration: Filing research designs and hypotheses publicly to reduce bias and improve credibility
+- Reproducibility: Ensuring research can be replicated, addressing the reproducibility crisis in science.
+:::
+
+:::{.column width="50%"}
+### Importance of theory
+
+- No "Just Doing an Experiment": All research involves theory, whether implicit or explicit
+- Model of the World: Helps predict how interventions affect outcomes and guides design
+- Alignment: Research design must align with theoretical frameworks to address intended questions
+- Causal Inference: Understanding the causal effect of $T$ on $Y$ requires a model of the world
+:::
+:::
+:::
+
+## Summary
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width="50%"}
+### Pre-registration
+
+- EGAP: Advocates for pre-registration and reproducible research
+- EGAP Research Design Form: Blueprint for research designs, available on EGAP's website
+- MIDA Framework
+  - Model: How we think the world works
+  - Inquiry: Answerable question about the model
+  - Data: Realising data on variables
+  - Answer: Generating an estimate of the quantity of interest
+:::
+
+:::{.column width="50%"}
+### DeclareDesign
+
+- Declare: Declare the model, inquiry, data, and answer
+- Diagnose: Diagnose the design to understand its properties
+- Design: Design the research to answer the inquiry
+- Available Models: Different models available to simulate research designs
+- Putting it all together: Simulate research designs to understand their properties
+:::
+:::
+:::
+
+## Next class
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- We will discuss [the experimental ideal]{.alert}: the gold standard for causal inference
+- But we will also see what to do when we cannot run an experiment (and still use the experimental logic to infer causality)
+- Natural and quasi-experiments: the next best thing to a randomised controlled trial
+- I will also post the first assignment on the course website and on Canvas
+- Please read [Blair et al. (2023)](https://www.cambridge.org/core/journals/american-political-science-review/article/declaring-and-diagnosing-research-designs/3CB0C0BB0810AEF8FF65446B3E2E4926) if you haven't yet, as well as the required readings for next class
+- [... and that's it for today!]{.alert} 😊🎉
+:::
+
+# Questions? {background-color="#2d4563"}
+
+# Thank you very much! 👏 <br> See you soon! 😊 {background-color="#2d4563"}
