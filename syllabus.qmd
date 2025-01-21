@@ -185,7 +185,7 @@ Required readings:
 
 Required readings:
 
-- Lecture slides: Potential Outcomes Framework.
+- Lecture slides: [Potential Outcomes Framework](https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-03/03-potential-outcomes.html/).
 - FEDAI: Chapter 02: Causal Inference and Experimentation.
 - Rubin, D. B. (2005). [Causal Inference using Potential Outcomes: Design, Modeling, Decisions](https://www.tandfonline.com/doi/abs/10.1198/016214504000001880). Journal of the American Statistical Association, 100(469), 322-331.
 
@@ -212,7 +212,6 @@ Weekly suggested readings:
 
 - FEDAI: Chapter 03: Sampling Distributions, Statistical Inference, and Hypothesis Testing.
 - EGAP Methods Guides: [Hypothesis Testing](https://egap.org/resource/10-things-to-know-about-hypothesis-testing/), [Randomisation Inference](https://egap.org/resource/10-things-to-know-about-randomization-inference/), and [Cluster Randomisation](https://egap.org/resource/10-things-to-know-about-cluster-randomization/). These short guides provide a good overview of the topics we will cover in class, as well as example code in `R`.
-
 
 ### Lecture 06: Texts for discussion (February 05)
 
