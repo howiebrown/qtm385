@@ -1,6 +1,6 @@
 ---
 title: QTM 385 - Experimental Methods
-subtitle: Lecture 2 - The Research Design Process
+subtitle: Lecture 02 - The Research Design Process
 author:
   - name: Danilo Freire
     orcid: 0000-0002-4712-6810
