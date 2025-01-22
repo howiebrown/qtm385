@@ -253,7 +253,7 @@ Source: <https://www.sciencedirect.com/topics/materials-science/statistical-desi
   - The research design must align with the theoretical framework to ensure that the study is addressing the intended questions
 :::
 
-## Let's consider the example from our experiment practicum {background-color="#2d4563"}
+## Let's consider the example from our experiment practicum
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 :::{.columns}
