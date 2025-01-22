@@ -874,7 +874,7 @@ Amy Cuddy demonstrating her theory of "power posing". It could never be replicat
 - Answer is an estimate of the quantity of interest or $p$-value (inquiry/estimand/test)
 :::
 
-# Let's see an example: Two-arm trial
+# Let's see an example: Two-arm trial {background-color="#2d4563"}
 
 ## Two-arm trial
 
