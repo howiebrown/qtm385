@@ -1,0 +1,202 @@
+---
+title: QTM 385 - Experimental Methods
+subtitle: Lecture 04 - Selection Bias
+author:
+  - name: Danilo Freire
+    email: danilo.freire@emory.edu
+    affiliations: Emory University
+format:
+  clean-revealjs:
+    self-contained: true
+    code-overflow: wrap
+    footer: "[Selection Bias](https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-04/04-selection-bias.html)"
+transition: slide
+transition-speed: default
+scrollable: true
+engine: jupyter
+revealjs-plugins:
+  - multimodal
+editor:
+  render-on-save: true
+---
+
+# Hello, everyone! 👋 <br> Hope you're all doing well! 😉 {background-color="#2d4563"}
+
+# Brief recap 📚 {background-color="#2d4563"}
+
+## Last time, we saw that...
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+- [Potential outcomes framework]{.alert} help understand treatment effects
+- [Fundamental problem of causal inference]{.alert}: we only see one potential outcome
+- [Treatment effect]{.alert} is the difference between potential outcomes ($\tau_{i} = Y_{1,i} - Y_{0,i}$)
+- [Average causal effect]{.alert} is the goal, but simple means comparison is biased
+- [Selection bias]{.alert}: treated/untreated groups differ even without treatment
+- [Bias]{.alert} does not vanish in large samples
+- [Mathematical expectation]{.alert} $E[Y_i]$ is the population average
+- [Law of large numbers]{.alert}: sample average converges to population average
+- [Conditional expectation]{.alert} $E[Y_i|X_i]$ is average outcome given $X_i$
+:::
+
+:::{.column width=50%}
+- [Experimental ideal]{.alert}: random assignment to treatment
+- [Random assignment]{.alert} creates similar groups on average
+- [SUTVA]{.alert} (Stable Unit Treatment Value Assumption) 
+- [Violations of SUTVA]{.alert}: spillovers, interference, contamination
+- [Partial equilibrium]{.alert}: treatment effects may not generalise
+- [External validity]{.alert}: generalising results to other settings
+- [Heterogeneous treatment effects]{.alert}: effects vary across people
+- [Compliance problem]{.alert}: people may not follow random assignment
+- [Intent-to-Treat (ITT)]{.alert} and [Treatment-on-the-Treated (TOT)]{.alert} analyses address compliance
+:::
+:::
+:::
+
+## Today, we will discuss...
+
+:::{style="margin-top: 50px; font-size: 28px;"}
+:::{.columns}
+:::{.column width=50%}
+- Potential outcomes in further detail
+- Different types of selection bias, e.g.:
+  - Inappropriate controls
+  - Loss to follow-up
+  - Volunteer bias
+  - Non-response bias
+- How to address selection bias
+- How to use `R` to estimate regression models
+- [But first...]{.alert}
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -40px;"}
+![](figures/selection-bias.png){width=80%}
+
+Source: [xkcd](https://xkcd.com/2618/) (who else? 😄)
+:::
+:::
+:::
+:::
+
+## Funny correlation of the day 😂
+
+:::{style="margin-top: 30px; font-size: 21px; text-align: center;"}
+![](figures/correlation.png){width=80%}
+:::
+
+# Let's get started! 🚀 {background-color="#2d4563"}
+
+## Potential outcomes revisited
+
+:::{style="margin-top: 30px; font-size: 25px;"}
+- Remember from last time: we have two potential outcomes for each unit
+- [We only observe one of them]{.alert}: $Y_i = Y_{1,i} \cdot D_i + Y_{0,i} \cdot (1 - D_i)$
+- So we need to estimate the [average treatment effect (ATE)]{.alert}:
+  - $E[Y_{1,i} - Y_{0,i}] = E[Y_{1,i}] - E[Y_{0,i}]$
+- The problem is, [not all comparisons are valid]{.alert}
+- I mean, they can be, but only under the [heroic assumption]{.alert} that the groups are similar on average before any adjustment
+- Otherwise, we will have [selection bias]{.alert}
+- Let's see how this works in practice! 🤓
+:::
+
+## Khuzdar and Maria
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+- [Selection bias]{.alert} occurs when the groups are different even without treatment
+- This can happen for many reasons, but first let's see the (simple) maths behind it
+- Using an example from Angrist and Pischke (2021), let's say we have a student called [Khuzdar]{.alert} from Kazakhstan, who is considering studying in the US and is worried about the cold weather
+- Should he get health insurance? 🤔
+- Let's imagine that, without insurance, Khuzdar has a potential outcome of $Y_{0,i} = 3$ and, with insurance, $Y_{1,i} = 4$. So the treatment effect is $\tau_i = 1$, that is, he gains 1 "health point" by getting insurance
+:::
+
+:::{.column width=50%}
+- Now, let's imagine that Khuzdar has a Chilean colleague called [Maria Moreno]{.alert}, who is also considering studying in the US
+- But since she comes from chilly Santiago, she is not worried about the cold weather
+- So, without insurance, Maria has a potential outcome of $Y_{0,i} = 5$ and, with insurance, $Y_{1,i} = 5$. So the treatment effect is $\tau_i = 0$, that is, she gains no "health points" by getting insurance
+
+:::{style="text-align: center;"}
+![](figures/khuzdar-maria.png){width=80%}
+:::
+:::
+:::
+:::
+
+## Khuzdar and Maria
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+- In fact, the comparison between frail Khuzdar and hearty Maria tells us little about the causal effects of their choices!
+- Why is that? Because [they were different to begin with]{.alert}
+- Let's do a little mathematical trick here: we will add and subtract $Y_{0, Khuzdar}$ from the treatment effect (they cancel each other out, right?)
+- So we have the following:
+
+:::{style="text-align: center;"}
+![](figures/selection-bias-math.png){width=80%}
+:::
+
+:::{style="text-align: left;"}
+- [What is the second term here?]{.alert} 
+:::
+:::
+
+## Difference in means = average treatment effect + selection bias
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+- The second term is the [selection bias]{.alert}!
+- The same is true for averages: [the difference in means is the average treatment effect plus the selection bias]{.alert}
+- Imagine that we have a dummy variable $D_i$ for treatment, which takes the value 1 if the unit is treated (in our case, insured) and 0 otherwise
+- Thus:
+
+:::{style="text-align: center;"}
+![](figures/selection-bias-math2.png){width=80%}
+:::
+:::
+
+:::{.column width=50%}
+- So far, so good, right? 
+- If we assume that [the treatment has a constant effect]{.alert} (i.e. the treatment effect is the same for everyone), we can rewrite the equation as:
+
+:::{style="text-align: center;"}
+![](figures/selection-bias3.png){width=30%}
+:::
+
+- Where $k$ is both the individual and average causal effect of insurance on health
+- Using the constant-effects model to substitute for $Avg_n[Y_{1i}|D_i = 1]$, we have
+
+:::{style="text-align: center;"}
+![](figures/selection-bias4.png){width=80%}
+:::
+:::
+:::
+:::
+
+## How to check for selection bias?
+### Balance tests
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=40%}
+- We use [balance tests]{.alert} or ([randomisation checks]{.alert}) to check if the groups are similar before treatment
+- The idea is to compare the means of the covariates for the treated and untreated groups
+- If the means are similar, it provides evidence that nothing systematic is driving the treatment effect
+- We are never 100% sure, but [we trust the random assignment]{.alert}
+- Small differences in means are acceptable, as long as they are not systematic
+- Why? Because some variation can happen only by chance
+- [100% personal opinion]{.alert}: I think they are quite useless 😂
+- [Mutz et al (2018)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1322143) make a good case for that
+:::
+
+:::{.column width=60%}
+:::{style="text-align: center;"}
+![](figures/balance-test.png){width=80%}
+
+Angrist and Pischke (2021), pp. 20 (selected parts)
+:::
+:::
+:::
+:::
