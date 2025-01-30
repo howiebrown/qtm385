@@ -11,7 +11,7 @@ If you have any questions about the assignment, feel free to email me at <danilo
 
 Good luck!
 
-# Questions and Answers
+# Questions 
 
 1.  What is the fundamental problem of causal inference, and how does the potential outcomes framework help us understand it? 
 
