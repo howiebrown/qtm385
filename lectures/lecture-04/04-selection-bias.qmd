@@ -625,12 +625,16 @@ head(data2)
 
 ## Estimating the second model
 
-:::{style="margin-top: 30px; font-size: 26px;"}
-- While it is common to add covariates to the model, [Freedman (2008)](https://doi.org/10.1214/07-AOAS143) demonstrated that pre-treatment covariate adjustment may bias estimates of average treatment effects in small samples
-- Why? To put it simply, he claims that [experiments simply do not need covariates]{.alert}
-- This is because OLS models assume linear effects and normal distributions, while experiments do not
-- [Lin (2013)](https://doi.org/10.1214/12-AOAS583) came up with a solution that involves a series of data transformations to make the covariates orthogonal to the treatment variable
-- He also argues that this bias is pretty much negligible in large samples
+:::{style="margin-top: 30px; font-size: 23px;"}
+- We can add covariates to experimental models to increase precision
+- The same way we do in any regression:
+  - $Y_i = \alpha + \beta \text{T}_i + \gamma \text{X}_i + \epsilon_i$
+- [Freedman (2008)](https://doi.org/10.1214/07-AOAS143) demonstrated that pre-treatment covariate adjustment may bias estimates of average treatment effects, mainly in small samples
+- [Lin (2013)](https://doi.org/10.1214/12-AOAS583) proposed that if covariate correlations differ between treatment and control groups, centering and interacting covariates with the treatment variable will balance the groups
+- This adjusts for covariates separately in each group, which is equivalent to including treatment-by-covariate interactions
+  - $Y_i = \alpha + \beta \text{T}_i + \gamma \text{W}_i + \delta \text{T}_i \times \text{W}_i + \epsilon_i$
+  - Where $W_i = \text{X}_i - \bar{\text{X}}$ and $\bar{\text{X}}$ is the mean of $\text{X}_i$
+  - For ease of interpretation, we can centre the covariates to have a mean of zero
 - Anyway, worry not! 😅 Our friends at [DeclareDesign](https://declaredesign.org/r/estimatr/articles/getting-started.html#lm_lin) have done all the work for us and created a function called `lm_lin()` that does everything automatically!
 :::
 
@@ -655,8 +659,8 @@ summary(model2)
 - We pass a simple `R` formula to it
 - As you can see, the results are pretty similar to the previous model
 - The treatment effect is slightly higher, and the standard error is slightly lower
-- The `_c` part of the variable names indicates that the variables are centred, which is recommended by Lin (2013)
-- He proposed centring all pre-treatment covariates, interacting them with the treatment variable, and regressing the outcome on the treatment, the centred pre-treatment covariates, and all of the interaction terms (😅)
+- The `_c` part of the variable names indicates that the variables are centred, as recommended by Lin (2013).
+- Lin's method addresses covariate imbalance by adjusting for covariates separately within each treatment group, which is equivalent to including all treatment-by-covariate interactions.
 :::
 :::
 :::
