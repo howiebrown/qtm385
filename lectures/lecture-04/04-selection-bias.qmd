@@ -247,39 +247,6 @@ Angrist and Pischke (2021), pp. 20 (selected parts)
 :::
 :::
 
-## Survivorship bias
-
-:::{style="margin-top: 30px; font-size: 26px;"}
-- In my view, one of the coolest examples of selection bias
-- [Survivorship bias]{.alert} is the logical error of concentrating on the people or things that made it past some selection process and overlooking those that did not
-- It is a type of [selection bias]{.alert} that can lead to [false conclusions]{.alert} in several different ways
-- For instance, imagine that you are studying the [effect of education on income]{.alert}
-- If you only look at people who have completed college, you are ignoring those who dropped out
-- This can lead to an [overestimation]{.alert} of the effect of education on income
-- Why? Because those who dropped out may have done so because they were not good students, which can affect their income
-- And there are many other examples of survivorship bias, such as in [historical studies]{.alert} and [finance]{.alert}
-- Have a look at this one!
-:::
-
-## Survivorship bias in World War II aircraft
-
-:::{style="margin-top: 30px; font-size: 26px;"}
-:::{.columns}
-:::{.column width=50%}
-- During World War II, the US military wanted to [improve the armour on its aircraft]{.alert}
-- They analysed the [bullet holes]{.alert} on returning aircraft and decided to add more armour to the areas with the most bullet holes
-- Considering the picture you see here, where would you add the armour?
-- More [here](https://en.wikipedia.org/wiki/Survivorship_bias#Military)
-:::
-
-:::{.column width=50%}
-:::{style="text-align: center;"}
-![](figures/aircraft.png){width=80%}
-:::
-:::
-:::
-:::
-
 ## Post-treatment bias
 
 :::{style="margin-top: 30px; font-size: 20px;"}
@@ -739,7 +706,7 @@ summary(model_interaction)
 :::{.columns}
 :::{.column width=60%}
 - We discussed the potential outcomes framework in further detail, focusing on issues of selection bias
-- We talked about different types of selection bias, such as inappropriate controls, loss to follow-up, survivorship bias, and counfounders
+- We talked about different types of selection bias, such as inappropriate controls, loss to follow-up, and counfounders
 - We also discussed how to measure variability using the standard deviation and standard error
 - Then, we talked about regression analysis of experiments, including how to simulate data, randomise treatment assignment, estimate the treatment effect, and include pre-treatment covariates in the model
 - We also introduced the `fabricatr`, `estimatr`, and `randomizr` packages, which are part of the `DeclareDesign` suite
