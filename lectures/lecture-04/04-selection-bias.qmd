@@ -103,7 +103,7 @@ Source: [xkcd](https://xkcd.com/2618/) (where else? 😄)
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=50%}
-- [Selection bias]{.alert} occurs when the groups are different even without treatment
+- [Selection bias]{.alert} occurs when the groups are systematically difference, often before the treatment (but not exclusively!)
 - Using an example from Angrist and Pischke (2021), let's say we have a student called [Khuzdar]{.alert} from Kazakhstan, who is considering studying in the US and is worried about the cold weather
 - Should he get health insurance? 🤔
 - Let's imagine that, without insurance, Khuzdar has a potential outcome of $Y_{0,i} = 3$ and, with insurance, $Y_{1,i} = 4$. So the treatment effect is $\tau_i = 1$, that is, he gains 1 "health point" by getting insurance
