@@ -61,7 +61,6 @@ editor:
 - Different types of selection bias, e.g.:
   - Inappropriate controls
   - Loss to follow-up
-  - Survivorship bias
   - Post-treatment bias
 - How to use `R` and `DeclareDesign` to estimate regression models
 - [But first...]{.alert}
