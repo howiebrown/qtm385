@@ -600,7 +600,7 @@ ggplot(simulations, aes(estimate)) +
 ## Statistical power
 ### What is it?
 
-:::{style="margin-top: 30px; font-size: 26px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 - [Statistical power]{.alert} is the probability of correctly rejecting the null hypothesis when it is false
 - In other words, it is the probability of [detecting an effect when there is one]{.alert}
 - Statistical power is influenced by several factors, including:
@@ -652,11 +652,11 @@ ggplot(simulations, aes(estimate)) +
 $$ \beta = \Phi \left( \frac{|\mu_t - \mu_c|\sqrt{N}}{2\sigma} - \Phi^{-1} \left( 1 - \frac{\alpha}{2} \right) \right) $$
 
 - $\beta$ (Beta): Power. A value between 0 and 1, usually set to 0.80
-- $\Phi$ (Phi): Cumulative distribution function of a standard normal distribution. $\Phi^{-1} is its inverse function
+- $\Phi$ (Phi): Cumulative distribution function of a standard normal distribution. $\Phi^{-1}$ is its inverse function
 - $\mu_t - \mu_c$: Assumed ATE
 - $\sigma$: Standard Deviation of Outcomes. This represents the assumed variability or "noisiness" of the outcome measurements. Assumed to be the same for both treatment and control
 - $\alpha$: Significance level. Commonly set to 0.05 in many fields
-- $N$: Sample size, the only factor directly controlled by the researcher in this formula.  he formula assumes a 50/50 chance of being in control
+- $N$: Sample size, the only factor directly controlled by the researcher in this formula. The formula assumes a 50/50 chance of being in control
 :::
 
 ## Calculate power using `DeclareDesign`
