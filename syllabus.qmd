@@ -196,7 +196,7 @@ Required readings:
 - Lecture slides: [Potential Outcomes Continued and Regression Analysis](https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-04/04-selection-bias.html).
 - Angrist, J. D., & Pischke, J. S. (2014). [Mastering 'Metrics: The Path from Cause to Effect](https://assets.press.princeton.edu/chapters/s10363.pdf). Princeton University Press. Chapter 01: Randomized Trials. The appendix is worth reading as well.
 - Problem Set 01 due.
-- Problem Set 02 assigned.
+- [Problem Set 02 assigned](https://github.com/danilofreire/qtm385/blob/main/assignments/02-assignment).
 
 Weekly suggested readings:
 
