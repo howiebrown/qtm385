@@ -1,6 +1,10 @@
 ---
 title: "QTM 385 - Experimental Methods"
 subtitle: Assignment 07
+author: "Your Name"
+format: pdf
+editor: visual
+output: pdf_document
 ---
 
 # Instructions
@@ -13,11 +17,68 @@ Good luck!
 
 # Questions 
 
+```{r}
+library(reticulate)
+use_python("/Users/howiebrown/anaconda3/bin/python3", required = TRUE)  # replace with your real path
+```
+
+```
 1.  Explain what literate programming is and why it is beneficial for experimental research. How does Quarto facilitate literate programming?
+
+
+Literate programming is a method of writing code that combines human-readable explanations with executable code in the same document. This approach, introduced by Donald Knuth, is especially beneficial for experimental research because it improves transparency, reproducibility, and collaboration. By integrating code, analysis, and narrative, researchers can clearly document their methodology and rationale, making it easier for others (and themselves) to understand, verify, and build upon their work.
+
+Quarto facilitates literate programming by allowing users to create dynamic, multi-language documents that weave together code, narrative, and output. It supports languages like R, Python, and Julia, and enables the generation of interactive reports, articles, and presentations in formats such as HTML, PDF, and Word. With features like inline code execution, citations, and parameterization, Quarto makes it easy to produce reproducible research documents that are both informative and publication-ready.
 
 2. Outline the steps you would take to create a PDF document from a Quarto file. What software or installations are typically required for PDF output? Please include examples of code that you would use to create a PDF document from a Quarto file. They are a YAML header, a Markdown cell, a code cell, and the render command. Wrap your code in a `verbatim` block to prevent it from being executed.
 
+To create a PDF document from a Quarto file, I would begin by ensuring that the necessary software is installed on my system. This includes the Quarto CLI and a LaTeX distribution such as TinyTeX, which is required to render PDF output. Next, I would create a Quarto file (`.qmd`) that includes a YAML header specifying the title, author, and output format as `pdf`. Below the header, I would add a Markdown cell with formatted text and a code cell using a supported language like R or Python to demonstrate embedded computation. Once the content is prepared, I would save the file—for example, as `my_report.qmd`—and then open a terminal or command prompt to run the command `quarto render my_report.qmd`. This command processes the Quarto file and generates a PDF document in the same directory.
+
+To generate PDF output from a Quarto file, you need the Quarto CLI and a LaTeX distribution such as TinyTeX, TeX Live, MiKTeX, or MacTeX. TinyTeX is a lightweight option and can be installed easily using the command `quarto install tinytex`. If your Quarto file includes code cells, you also need the appropriate language environment installed, such as R or Python.
+
+````verbatim
+
+This ensures it won’t be executed or interpreted. Here's the full example again wrapped that way:
+
+````verbatim
+---
+title: "PDF Report with Python"
+author: "Your Name"
+format: pdf
+jupyter: python3
+---
+
+# Introduction
+
+This is a sample Quarto document that uses Python code and renders to a PDF file. Quarto makes it easy to combine text, code, and output in one report.
+
+## Data Summary
+
+```{python}
+#python code here
+```
+
+# Render Command (run in terminal)
+
+quarto render python_report.qmd
+
 3. List and briefly describe the six core components of a DeclareDesign study. Explain how these components help structure the design process. 
+
+A DeclareDesign study consists of six core components that provide a structured framework for designing, diagnosing, and improving research designs. These components help researchers clearly define each stage of their study, making the process transparent, replicable, and easier to assess for validity and power.
+
+1. **Model** – Specifies the theoretical model of the world, including assumptions about how data are generated. This includes variables, potential outcomes, and relationships between them.
+
+2. **Inquiry** – Defines the specific research question or estimand (e.g., the average treatment effect) the study aims to answer based on the model.
+
+3. **Data Strategy** – Describes how data are collected, including the sampling method and how treatments are assigned (e.g., randomization procedures).
+
+4. **Answer Strategy** – Specifies the method used to analyze the data and estimate the inquiry (e.g., regression models, difference-in-means).
+
+5. **Diagnosands** – Metrics used to evaluate the design’s performance (e.g., bias, power, RMSE). These help assess how well the design will perform under the assumed model.
+
+6. **Design** – Combines all the previous components into a complete, testable design object that can be simulated and diagnosed.
+
+Together, these components guide researchers through building a rigorous and transparent study, ensuring each part—from theory to estimation—is logically connected and measurable.
 
 4. This task is divided into two parts, both focusing on designing a 3-arm experiment for political mobilisation using a modified version of the [`multi_arm_designer` function from `DesignLibrary`](https://declaredesign.org/r/designlibrary/reference/multi_arm_designer.html). Please answer the following questions, providing code and explanations.
 
@@ -34,14 +95,128 @@ Assume a baseline voter turnout of 30% (standard deviation = 10%) in the Control
 
 Set the sample size to `N = 500` and use default values for other arguments of `multi_arm_designer`. Create the design in R. Diagnose the design and briefly justify your sample size choice based on whether the power to detect the treatment effects seems adequate from the initial diagnosis.
 
+```{r}
+# Load required libraries
+library(DesignLibrary)
+library(DeclareDesign)
+library(dplyr)
+
+
+# Create 3-arm GOTV experiment design
+design <- multi_arm_designer(
+  outcome_means = c(0.30, 0.50, 0.60),       # Control, Civic Duty, Social Pressure
+  outcome_sds = c(0.10, 0.20, 0.20),
+  N = 500                                    # Total sample size
+)
+
+# Diagnose the design
+diagnosis <- diagnose_design(design)
+print(diagnosis)
+```
+
+
 5. In this question, you will need to modify your design with [`expand_design()`](https://declaredesign.org/r/declaredesign/reference/expand_design.html) for different sample sizes. Create a design for 3 different sample sizes: `N = 1000`, `N = 2000`, and `N = 3000`. Diagnose each design and compare the results. Justify your choice of sample size.
 
+
+```{r}
+library(DeclareDesign)
+
+make_design <- function(N) {
+  declare_population(N = N, U = rnorm(N)) +
+  
+    declare_potential_outcomes(
+      Y ~ rnorm(
+        n = 1,
+        mean = ifelse(Z == "control", 0.30,
+               ifelse(Z == "civic_duty", 0.50, 0.60)),
+        sd = ifelse(Z == "control", 0.10, 0.20)
+      ),
+      conditions = c("control", "civic_duty", "social_pressure")
+    ) +
+    
+    declare_assignment(Z = complete_ra(N = N, conditions = c("control", "civic_duty", "social_pressure"))) +
+    
+    declare_reveal(Y, Z) +
+    
+    declare_inquiries(
+      ATE_civic = mean(Y_Z_civic_duty - Y_Z_control),
+      ATE_social = mean(Y_Z_social_pressure - Y_Z_control)
+    ) +
+    
+    declare_estimator(Y ~ Z, model = lm_robust)
+}
+
+designs <- expand_design(make_design, N = c(1000, 2000, 3000))
+diagnosis <- diagnose_design(designs)
+print(diagnosis)
+```
+
+
+
+
 6. Now, instead of using `DesignLibrary`, let's recreate the experiment from question 04 using the `DeclareDesign` package with `N = 5000`. Use the functions `declare_population()`, `declare_potential_outcomes()`, `declare_inquiries()`, `declare_assignment()`, `declare_reveal()`, and `declare_estimator()`. An example can be seen [on this page](https://declaredesign.org/r/designlibrary/articles/multi_arm.html). Analyse the design and comment on the sample size.
+```{r}
+library(DeclareDesign)
+
+# Step 1: Declare population
+population <- declare_population(N = 5000, U = rnorm(N))
+
+# Step 2: Declare potential outcomes (one for each condition)
+potential_outcomes <- declare_potential_outcomes(
+  Y ~ rnorm(
+    n = 1,
+    mean = ifelse(Z == "control", 0.30,
+           ifelse(Z == "civic_duty", 0.50, 0.60)),
+    sd = ifelse(Z == "control", 0.10, 0.20)
+  ),
+  conditions = c("control", "civic_duty", "social_pressure")
+)
+
+# Step 3: Declare estimands
+inquiries <- declare_inquiries(
+  ATE_civic_duty = mean(Y_Z_civic_duty - Y_Z_control),
+  ATE_social_pressure = mean(Y_Z_social_pressure - Y_Z_control)
+)
+
+# Step 4: Declare assignment
+assignment <- declare_assignment(Z = complete_ra(N = 5000, conditions = c("control", "civic_duty", "social_pressure")))
+
+# Step 5: Reveal outcomes
+reveal <- declare_reveal(Y, Z)
+
+# Step 6: Declare estimator
+estimator <- declare_estimator(Y ~ Z, model = lm_robust)
+
+# Step 7: Combine into a design
+design <- population + potential_outcomes + inquiries + assignment + reveal + estimator
+
+# Step 8: Diagnose the design
+diagnosis <- diagnose_design(design)
+print(diagnosis)
+```
+
+
 
 7. What is meant by a "true natural experiment"? Provide an example of a research scenario that could be considered a true natural experiment and explain why.
 
+A **"true natural experiment"** refers to a situation in which treatment assignment occurs **as if randomly**, due to some naturally occurring event or external factor outside the control of the researcher or participants. This mimics the conditions of a randomized controlled trial, allowing for causal inference without deliberate intervention. The key is that the assignment mechanism must be plausibly exogenous—meaning it is unrelated to other factors that could influence the outcome.
+
+An example of a true natural experiment is the **draft lottery during the Vietnam War**. In this case, U.S. men were randomly assigned draft eligibility based on their birthdates. Researchers have used this setup to study the effects of military service on later life outcomes like earnings or health. Because the birthdate-based assignment was random and unrelated to individual characteristics, it serves as a natural source of randomization, making it a strong basis for causal inference.
+
 8. Explain the ethical considerations that are particularly relevant when conducting quasi-experiments, even though they may arise from situations where randomisation is not ethical. Provide examples of ethical considerations that researchers should be mindful of when designing and conducting quasi-experiments.
+
+Quasi-experiments are often used when random assignment is impractical or unethical, such as in evaluating the effects of natural disasters, policy shifts, or large-scale institutional changes. Although researchers do not control the assignment of treatment, they still have an ethical responsibility to protect the rights and well-being of participants. One major consideration is **informed consent**—while full experimental consent may not be possible, researchers should be transparent when collecting data, especially if it includes personal or sensitive information. **Privacy and confidentiality** are also essential, as quasi-experiments often rely on administrative or observational data that can inadvertently expose individuals or communities.
+
+Researchers must also be careful not to **exploit vulnerable populations**, particularly when studying groups affected by hardship or crisis. For example, in a study examining the impact of a sudden school closure on student performance, researchers should avoid drawing harmful conclusions that might stigmatize communities or influence policy in negative ways. Ethical research design also includes **minimizing harm**, ensuring fair representation, and being cautious about how findings are communicated. Even without randomization, ethical oversight and sensitivity are vital to maintaining public trust and ensuring research benefits the populations it studies.
 
 9. Imagine that a group of researchers must study drug decriminalisation effects. They could randomly assign cities to keep or change drug laws (RCT), but this forces some areas to maintain harmful policies. Alternatively, they could analyse cities that choose decriminalisation themselves (quasi-experimental), though other factors affecting results are harder to rule out. Argue which approach balances ethics and evidence better, explaining how to strengthen your chosen method's weaknesses through careful analysis and honesty about limitations.
 
+In this case, a **quasi-experimental approach** offers a better balance between ethics and evidence. Randomly assigning cities to maintain or change drug laws in a randomized controlled trial (RCT) would be ethically problematic, as it could require some cities to continue harmful policies against their will, potentially exacerbating public health issues or criminal justice inequalities. A quasi-experimental design, while less controlled, respects local autonomy and avoids deliberately imposing policies that could cause harm.
+
+To strengthen the validity of a quasi-experimental approach, researchers can use strategies like **matching**, **difference-in-differences**, or **instrumental variables** to account for confounding factors. For example, they might compare cities with similar demographics and pre-policy trends or use timing variations in decriminalization as a natural source of variation. It's also essential to be **transparent about limitations**, acknowledging that causal claims are more tentative than in an RCT. With rigorous analysis and ethical sensitivity, quasi-experiments can still yield valuable insights while upholding the dignity and welfare of affected communities.
+
 10. What is the role of qualitative data in experimental and quasi-experimental research? How can these data be used to complement the analysis of quantitative data?
+
+Qualitative data plays a crucial role in both experimental and quasi-experimental research by providing **contextual understanding** that quantitative data alone may not capture. While experiments focus on measuring causal effects through structured data, qualitative methods—such as interviews, focus groups, or open-ended survey responses—can uncover how participants **perceive interventions**, why certain outcomes occurred, or what unintended consequences arose. This is especially important in quasi-experiments, where the lack of randomization means researchers must carefully interpret the meaning and mechanisms behind observed changes.
+
+These qualitative insights can **complement quantitative analysis** by enriching interpretation and helping refine hypotheses. For example, if a study finds that drug decriminalization reduces arrest rates, qualitative interviews with police officers or community members might explain shifts in enforcement behavior or public attitudes. Moreover, qualitative data can help identify **heterogeneous effects**—explaining why a policy works better in some places than others—or reveal design flaws and ethical concerns. By integrating both types of data, researchers can offer more nuanced, credible, and actionable conclusions.
