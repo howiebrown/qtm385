@@ -1,6 +1,6 @@
 ---
-title: "QTM 385 - Experimental Methods"
-subtitle: Assignment 08
+title: "QTM 385 – Experimental Methods"
+subtitle: "Assignment 08"
 author: "Howard Brown"
 format: pdf
 editor: visual
