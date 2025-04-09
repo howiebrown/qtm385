@@ -1261,6 +1261,227 @@ Danilo Freire
 </ul>
 </div></div>
 </div>
+</section>
+<section id="last-assignment" class="slide level2">
+<h2>Last assignment</h2>
+<div style="font-size: 23px; margin-top: 30px;">
+<table class="caption-top" style="width:100%;">
+<caption>Probability of receiving treatment, spillover, and control</caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 24%">
+<col style="width: 41%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Village</th>
+<th>Untreated (<span class="math inline">\(Y_{00}\)</span>)</th>
+<th>Adjacent village treated (<span class="math inline">\(Y_{10}\)</span>)</th>
+<th>Treated (<span class="math inline">\(Y_{01}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>6</td>
+<td>2</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>6</td>
+<td>NA</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Village</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>F</th>
+<th>Pr(control)</th>
+<th>Pr(spillover)</th>
+<th>Pr(treatment)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">\(Y_{01}\)</span></td>
+<td><span class="math inline">\(Y_{10}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td>0.6</td>
+<td>0.2</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">\(Y_{10}\)</span></td>
+<td><span class="math inline">\(Y_{01}\)</span></td>
+<td><span class="math inline">\(Y_{10}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td>0.4</td>
+<td>0.4</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{10}\)</span></td>
+<td><span class="math inline">\(Y_{01}\)</span></td>
+<td><span class="math inline">\(Y_{10}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td>0.4</td>
+<td>0.4</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{10}\)</span></td>
+<td><span class="math inline">\(Y_{01}\)</span></td>
+<td>0.6</td>
+<td>0.2</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{00}\)</span></td>
+<td><span class="math inline">\(Y_{01}\)</span></td>
+<td>0.8</td>
+<td>0</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+<p>Using these data, calculate the following quantities:</p>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div style="font-size: 15px; margin-top: 30px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="question-02">Question 02</h3>
+<ul>
+<li>Estimate <span class="math inline">\(E[Y_{01} - Y_{00}]\)</span> for the random assignment that places the treatment at location A</li>
+<li>Village A is treated. So we have this (from the table):
+<ul>
+<li><span class="math inline">\(Y_{01}^{(A)} = 0\)</span> and <span class="math inline">\(Pr(treat) = 0.2\)</span></li>
+</ul></li>
+<li>Treated part of the equation: <span class="math display">\[ \frac{0 / 0.2}{1 / 0.2} = \frac{0}{5} = 0 \]</span></li>
+<li>Villages C, D, and F are untreated and not next to A (<span class="math inline">\(Y_{00}\)</span>. So:
+<ul>
+<li><span class="math inline">\(Y_{00}^{(C)} = 0, \quad Pr(control) = 0.4\)</span></li>
+<li><span class="math inline">\(Y_{00}^{(D)} = 6, \quad Pr(control) = 0.6\)</span></li>
+<li><span class="math inline">\(Y_{00}^{(F)} = 6, \quad Pr(control) = 0.8\)</span> <span class="math display">\[
+\frac{0/0.4 + 6/0.6 + 6/0.8}{1/0.4 + 1/0.6 + 1/0.8} = \frac{0 + 10 + 7.5}{2.5 + 1.667 + 1.25} = \frac{17.5}{5.417} \approx 3.23
+\]</span></li>
+</ul></li>
+<li>And the result is:</li>
+</ul>
+<p><span class="math display">\[
+\hat{E}[Y_{01} - Y_{00}] = 0 - 3.23 = -3.23
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<h3 id="question-03">Question 03</h3>
+<ul>
+<li><p>Estimate <span class="math inline">\(E[Y_{10} - Y_{00}]\)</span> for the random assignment that places the treatment at location A, restricting the sample to the set of villages that have a non-zero probability of expressing both of these potential outcomes.</p></li>
+<li><p>Village B is the only with spillovers (<span class="math inline">\(Y_{10}\)</span>)</p>
+<ul>
+<li><span class="math inline">\(Y_{10}^{(B)} = 2\)</span>, <span class="math inline">\(Pr(spillover) = 0.4\)</span></li>
+<li><span class="math inline">\(\frac{2/0.4}{1/0.4} = \frac{5}{2.5} = 2.0\)</span></li>
+</ul></li>
+<li><p>Villages C and D are neither treated nor next to A (<span class="math inline">\(Y_{00}\)</span>)</p>
+<ul>
+<li><span class="math inline">\(Y_{00}^{(C)} = 0\)</span>, <span class="math inline">\(Pr(control) = 0.4\)</span><br>
+</li>
+<li><span class="math inline">\(Y_{00}^{(D)} = 6\)</span>, <span class="math inline">\(Pr(control) = 0.6\)</span></li>
+</ul></li>
+<li><p>Thus, for the control part of the equation: <span class="math display">\[
+\frac{0/0.4 + 6/0.6}{1/0.4 + 1/0.6} = \frac{0 + 10}{2.5 + 1.667} = \frac{10}{4.167} \approx 2.4
+\]</span></p></li>
+<li><p>Final result:</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{E}[Y_{10} - Y_{00}] = 2.0 - 2.4 = -0.40
+\]</span></p>
+</div></div>
+</div>
+</section>
+<section id="questions-1" class="slide level2">
+<h2>Questions</h2>
+<section id="question-04" style="font-size: 17px; margin-top: 30px;">
+<h3>Question 04</h3>
+<ul>
+<li>Estimate <span class="math inline">\(E[Y_{01} - Y_{00}]\)</span> restricting the sample to the same set of villages as in question 3.</li>
+<li>Village F cannot express <span class="math inline">\(Y_{01}\)</span> because we’re limiting the analysis to villages as in question 3.</li>
+<li>Village A:
+<ul>
+<li><span class="math inline">\(Y_{01}^{(A)} = 0\)</span>, <span class="math inline">\(Pr(treat) = 0.2\)</span></li>
+<li><span class="math inline">\(\frac{0/0.2}{1/0.2} = \frac{0}{5} = 0\)</span></li>
+</ul></li>
+<li>Villages C and D (controls):
+<ul>
+<li><span class="math inline">\(Y_{00}^{(C)} = 0\)</span>, <span class="math inline">\(Pr(control) = 0.4\)</span><br>
+</li>
+<li><span class="math inline">\(Y_{00}^{(D)} = 6\)</span>, <span class="math inline">\(Pr(control) = 0.6\)</span></li>
+</ul></li>
+<li>Control part of the equation:</li>
+</ul>
+<p><span class="math display">\[
+\frac{0/0.4 + 6/0.6}{1/0.4 + 1/0.6} = \frac{0 + 10}{2.5 + 1.667} = \frac{10}{4.167} \approx 2.4
+\]</span></p>
+<ul>
+<li>Result:</li>
+</ul>
+<p><span class="math display">\[
+\hat{E}[Y_{01} - Y_{00}] = 0 - 2.4 = -2.4
+\]</span></p>
+</section>
 </section></section>
 <section>
 <section id="todays-plan" class="title-slide slide level1 center" data-background-color="#2d4563">
@@ -1307,7 +1528,8 @@ Danilo Freire
 <div style="font-size:35px; margin-top: 30px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Think about whether the population of London is more or less than 500,000 people. What do you think the population of London is?</p>
+<p>Think about whether the population of Madrid is more or less than 500,000 people.</p>
+<p>What do you think the population of Madrid is?</p>
 </div><div class="column" style="width:50%;">
 <ul>
 <li><span class="alert">Answer here</span>: <a href="https://tinyurl.com/qtm385-survey" class="uri">https://tinyurl.com/qtm385-survey</a></li>
@@ -1335,7 +1557,8 @@ Danilo Freire
 <div style="font-size: 35px; margin-top: 30px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Think about whether the population of London is more or less than 20,000,000 people. What do you think the population of London is?</p>
+<p>Think about whether the population of Madrid is more or less than 20,000,000 people.</p>
+<p>What do you think the population of Madrid is?</p>
 </div><div class="column" style="width:50%;">
 <ul>
 <li><span class="alert">Answer here</span>: <a href="https://tinyurl.com/qtm385-survey" class="uri">https://tinyurl.com/qtm385-survey</a></li>
@@ -1352,7 +1575,6 @@ Danilo Freire
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><span class="alert">Population of London</span>: 9.4 million</li>
 <li>What did you guess? (See Responses)</li>
 <li>What’s going on here?
 <ul>
@@ -1518,8 +1740,8 @@ Danilo Freire
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Outcomes are affected consistent with theory</li>
-<li>Before the study using <span class="alert">pilot testing</span> (or pre-testing)</li>
+<li>Outcomes affected are consistent with theory</li>
+<li>Before the study, using <span class="alert">pilot testing</span> (or pre-testing)</li>
 <li>During the study, using <span class="alert">manipulation checks</span></li>
 <li>During the study, using <span class="alert">placebos</span></li>
 <li>During the study, using <span class="alert">non-equivalent outcomes</span></li>
@@ -1593,7 +1815,7 @@ Danilo Freire
 <ul>
 <li>Assess effect of some treatment on attitudes toward group A</li>
 <li>Focal outcome: attitudes toward group A</li>
-<li>Non-equivalent outcome: attitudes toward group</li>
+<li>Non-equivalent outcome: attitudes toward group B</li>
 </ul></li>
 </ul>
 </div></div>
@@ -1666,7 +1888,7 @@ Danilo Freire
 <li>Manipulate by asking different questions:</li>
 <li>Battery of 5 “rights” questions, or</li>
 <li>Battery of 5 “life” questions</li>
-<li>Measure support for legalized abortion</li>
+<li>Measure support for legalised abortion</li>
 <li>If answers to manipulated questions matter, can measure rest post-outcome</li>
 </ul></li>
 </ul>
@@ -1772,7 +1994,7 @@ Danilo Freire
 <div class="columns">
 <div class="column" style="width:30%;">
 <ul>
-<li>[Images can also work well]</li>
+<li><span class="alert">Images can also work well</span></li>
 <li>Subliminal primes possible, depending on software</li>
 <li>Lots of recent examples of facial manipulation</li>
 <li>Example:
@@ -1846,7 +2068,7 @@ Danilo Freire
 </section>
 <section id="concluding-remarks-1" class="slide level2">
 <h2>Concluding remarks</h2>
-<div style="font-size: 24px; margin-top: 30px;">
+<div style="font-size: 27px; margin-top: 30px;">
 <ul>
 <li><span class="alert">Survey experiments are great!</span></li>
 <li>They are easy to implement and analyse, and there are an <span class="alert">almost infinite number of ways to design them</span></li>
@@ -1870,7 +2092,7 @@ Danilo Freire
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-21/21-survey.html">Survey</a></p>
+<p><a href="https://raw.githack.com/danilofreire/qtm385/main/lectures/lecture-21/21-survey.html">Survey Experiments</a></p>
 </div>
 </div></div>
 
