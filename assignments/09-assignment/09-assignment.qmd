@@ -1,7 +1,10 @@
 ---
-title: "QTM 385 - Experimental Methods"
-subtitle: Assignment 09
-fig-cap-location: top
+title: "QTM 385 – Experimental Methods"
+subtitle: "Assignment 09"
+author: "Howard Brown"
+format: pdf
+editor: visual
+output: pdf_document
 ---
 
 # Instructions
