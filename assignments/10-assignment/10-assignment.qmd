@@ -1,7 +1,10 @@
 ---
-title: "QTM 385 - Experimental Methods"
-subtitle: Assignment 10
-fig-cap-location: top
+title: "QTM 385 – Experimental Methods"
+subtitle: "Assignment 10"
+author: "Howard Brown"
+format: pdf
+editor: visual
+output: pdf_document
 ---
 
 # Instructions
@@ -14,17 +17,35 @@ Good luck!
 
 1. In the context of survey experiments, what does it mean for a manipulation to have "construct validity"? How can pilot testing help ensure construct validity of a manipulation?
 
+In the context of survey experiments, construct validity refers to the extent to which a manipulation accurately represents the theoretical concept it is intended to test. A manipulation with high construct validity ensures that any observed effects on respondents' attitudes or behaviors can be confidently attributed to the construct of interest, rather than to unrelated or confounding factors. For instance, if a study aims to examine the effects of populist rhetoric, the manipulation must truly reflect the core elements of populism—such as anti-elitism and people-centrism—rather than simply emotional language or nationalistic themes, unless those are explicitly part of the conceptual definition. Pilot testing plays a crucial role in establishing construct validity. By exposing a small sample to the experimental materials in advance, researchers can assess whether participants interpret the manipulation in the intended way. This process may involve follow-up questions, cognitive interviews, or pre-tests measuring perceptions of the stimulus. If participants misinterpret the manipulation or fail to perceive the targeted construct, researchers can revise and refine the materials accordingly. In this way, pilot testing helps ensure that the manipulation effectively and consistently captures the intended theoretical construct, enhancing the internal rigor and interpretability of the experiment.
+
 2. Imagine you are designing a survey experiment to study the effect of "fake news" headlines on political attitudes. Propose two different survey experiment paradigms (vignette design, question wording, etc) that you could use to manipulate exposure to fake news. For each paradigm, describe the manipulation and discuss its strengths and weaknesses in the context of studying fake news effects.
+
+One possible survey experiment paradigm to study the effect of fake news on political attitudes is a **vignette design** in which participants are randomly assigned to read a short news article or headline—either a fabricated, misleading headline (the treatment) or a factually accurate, mainstream headline (the control)—on a political topic such as immigration or election integrity. After exposure, participants are asked to report their attitudes toward the issue discussed in the article. This design allows researchers to isolate the causal effect of fake news content by directly comparing attitudes across treatment conditions. A strength of this approach is its realism: the vignette closely mirrors how individuals encounter news in everyday life. It also provides a controlled way to test specific claims or narrative frames. However, a key weakness is that single exposure may not fully capture the cumulative or repeated nature of fake news consumption, and respondents may not engage with the content as they would organically, limiting ecological validity.
+
+A second approach could involve **manipulating question wording** by embedding fake or misleading information within the phrasing of attitudinal questions. For example, a treatment group might be asked, “Given the widespread reports of voter fraud in the last election, how concerned are you about election security?” while a control group is asked the same question without the prefacing clause. This subtle manipulation simulates how exposure to fake news may seep into public discourse and influence perceptions without direct sourcing. A strength of this paradigm is that it captures the persuasive influence of framing and misinformation in a more diffuse, implicit way. However, the weakness lies in its potential to conflate question wording effects with exposure to fake news itself—it may be unclear whether the effect is due to the misinformation or simply the suggestive nature of the question format. Additionally, it lacks the visual or stylistic cues typical of fake news content, which may limit its realism.
 
 3. Now imagine you are studying a highly sensitive topic like domestic violence perpetration using a survey experiment. Which of the sensitive question techniques discussed in Lecture 22 (list experiment, RRT, endorsement experiment, conjoint analysis) do you think would be least ethically problematic and most methodologically appropriate for this topic? Justify your choice, considering both ethical and methodological factors.
 
+For a highly sensitive topic like domestic violence perpetration, the list experiment (also known as the item count technique) is likely the least ethically problematic and most methodologically appropriate among the techniques discussed. The list experiment offers a way for respondents to indirectly report on stigmatized behaviors without having to admit them explicitly. Participants are presented with a list of non-sensitive behaviors and are asked how many (not which) they have engaged in; the treatment group receives the same list with the sensitive item—such as perpetrating violence—added. By comparing the average number of behaviors reported between the two groups, researchers can estimate the prevalence of the sensitive behavior without identifying individual responses. Ethically, this technique offers a high degree of privacy and minimizes the risk of emotional distress or social desirability bias, since respondents never have to directly confront or disclose the sensitive act. Methodologically, it allows for population-level inferences while protecting individual anonymity. While techniques like the randomized response technique (RRT) also aim to ensure confidentiality, they can be cognitively complex and may confuse respondents, reducing data quality. The endorsement experiment and conjoint analysis are less suited to measuring direct behavioral admissions and more appropriate for attitudinal or preference-based outcomes. Thus, the list experiment strikes the best balance between ethical sensitivity and methodological rigor for studying a topic as delicate as domestic violence perpetration.
+
 4. Many survey experiments, especially those using online platforms, rely on convenience samples. Discuss the potential implications of using convenience samples (vs. probability samples) for the external validity of survey experiment findings, particularly when studying sensitive topics or seeking to generalise to specific populations. How can researchers mitigate the limitations of convenience samples in survey experiments?
+
+Using convenience samples in survey experiments—such as those drawn from online platforms like MTurk or Prolific—can pose significant challenges for external validity, especially when studying sensitive topics or aiming to generalize findings to broader populations. Convenience samples often consist of individuals who are more technologically literate, younger, and more politically engaged than the general population, which can limit the representativeness of the results. When dealing with sensitive topics like domestic violence or political extremism, participants in convenience samples may differ systematically from the target population in terms of their willingness to disclose information or their exposure to certain experiences. This means that estimated treatment effects may not accurately reflect how a broader, more diverse population would respond. Moreover, if the sample lacks variation on key demographic or attitudinal variables, it becomes difficult to assess how effects might differ across subgroups.
+
+To mitigate these limitations, researchers can take several steps. One approach is to use post-stratification weights to align the sample more closely with population benchmarks on key demographics. Another is to replicate the study across multiple samples, including more representative panels or even probability-based samples when possible. Researchers can also focus on internal validity—ensuring causal inference is strong—while being transparent about external validity limitations. Finally, embedding manipulation checks and collecting demographic covariates allows for subgroup analysis, which can help assess whether findings are robust across different segments of the sample. While convenience samples offer practical advantages, careful design and transparency are crucial to responsibly interpreting and generalizing survey experiment findings.
 
 5. In the context of survey experiments, what are some potential ethical concerns related to the use of deception in experimental manipulations? How can researchers balance the need for deception to achieve valid experimental results with the ethical obligation to obtain informed consent from participants?
 
+In survey experiments, the use of deception—such as presenting false information or concealing the true purpose of the study—can raise important ethical concerns. One major issue is that deception may undermine participants’ ability to provide fully informed consent, a core principle of ethical research. Participants typically agree to take part in studies based on an understanding of what the research involves; when deception is used, that understanding is, by design, incomplete. This can erode trust between researchers and participants, particularly if the deception involves emotionally charged or sensitive topics. There is also a risk of psychological harm if participants feel manipulated, embarrassed, or distressed upon learning the true nature of the study during debriefing. To balance the need for deception with ethical obligations, researchers must ensure that the deception is justified by the study’s potential scientific value and that there is no feasible non-deceptive alternative. Ethics review boards often require that any deception be minimal and that participants be fully debriefed afterward, including an explanation of the true purpose of the study and the reason for the deception. Importantly, participants should also be given the option to withdraw their data after debriefing. By carefully weighing the benefits and risks, limiting the extent of deception, and maintaining transparency post-study, researchers can uphold ethical standards while still conducting methodologically rigorous experiments.
+
 6. Compare and contrast "list experiments" and "conjoint analysis" as methods for studying sensitive topics. In what situations might one be preferred over the other?
 
+List experiments and conjoint analysis are both valuable tools in survey research, but they serve different purposes and are suited to different types of sensitive topics. A list experiment is designed to estimate the prevalence of a sensitive behavior or belief without requiring respondents to directly admit to it. Participants are shown a list of items and asked how many, not which, apply to them. A treatment group receives the same list with an added sensitive item, and the difference in means between groups estimates the proportion who endorse the sensitive item. This method is particularly useful when studying stigmatized behaviors, such as domestic violence perpetration or racial prejudice, where direct questioning may lead to underreporting due to social desirability bias. In contrast, conjoint analysis presents respondents with profiles that vary across several attributes and asks them to make choices or judgments based on those profiles. While it can be used to infer preferences on sensitive dimensions—such as how race, religion, or gender might influence hiring or asylum decisions—it does not measure personal behaviors but rather attitudes or decision-making trade-offs. Conjoint analysis is often preferred when the goal is to understand how people evaluate complex social scenarios or rank competing values, whereas list experiments are more appropriate when estimating the true level of endorsement or participation in taboo or socially undesirable behaviors. In short, list experiments protect individual anonymity in measuring hidden behaviors, while conjoint analysis uncovers implicit preferences in structured decision contexts.
+
 7. List experiments rely on the "no design effects" assumption, that is, that the inclusion of the sensitive item does not change responses to the control items. Describe a scenario where this assumption might be violated in a study measuring prejudice using a list experiment. What would be the consequences for the interpretation of the results? 
+
+A violation of the “no design effects” assumption in a list experiment can occur when the inclusion of the sensitive item alters how respondents interpret or respond to the other, non-sensitive control items. For example, imagine a study measuring racial prejudice where the treatment group receives a list that includes the sensitive item “I would not want a person of another race as a neighbor,” along with more neutral control items such as “I dislike noisy neighbors” and “I prefer to live near parks.” The presence of the racially charged item may shift how participants view the entire list—either by making them more cautious in their responses or by prompting them to reinterpret the meaning of the other items through a racial lens. As a result, respondents in the treatment group might underreport even non-sensitive items to avoid being perceived as biased, or they may overreport to mask their true views. This distorts the comparison between treatment and control groups, violating the assumption that the sensitive item has no effect on responses to other items. The consequence is that the estimated prevalence of the sensitive attitude becomes unreliable, potentially underestimating or overestimating the true level of prejudice. Without the no design effects assumption holding, the core logic of the list experiment—isolating the impact of the sensitive item—breaks down, undermining the validity of the results.
 
 8. In lecture 22, we discussed [an article by Chapkovski et al. (2022)](https://journals.sagepub.com/doi/full/10.1177/20531680221108328) which used a list experiment to measure preference falsification regarding support for Russians in the Ukraine War. A slightly modified version of the database can be found here: <https://github.com/danilofreire/qtm385/blob/main/assignments/10-assignment/data.csv>. The dependent variable is called `nlist`, and the treatment variable is called `treat`. The number of control items ($J$) is 3. `female`, `fortyplus`, `edu`, `tv`, `playeremployment` are covariates describing whether the respondent is female, whether they are over 40 years old, whether they have a university education, whether they watch Russian TV channels, and whether the respondent is employed.
 
@@ -32,6 +53,66 @@ The `list` package can be used to estimate the treatment effect, and the `ictreg
 
 Using a linear model, estimate the prevalence of the sensitive item. This is obtained by regressing `nlist` on a constant and `treat` as the treatment variable. The result is the prevalence of the sensitive item. What is the estimated prevalence? (Note: the prevalence here is slightly different from the prevalence in the article because we are using a modified version of the dataset.)
 
+```{r}
+# Load necessary packages
+library(readr)
+library(dplyr)
+
+# Load the dataset
+url <- "https://raw.githubusercontent.com/danilofreire/qtm385/main/assignments/10-assignment/data.csv"
+data <- read_csv(url)
+
+# Run linear regression: nlist ~ treat
+model <- lm(nlist ~ treat, data = data)
+
+# Summarize model
+summary(model)
+
+# Extract estimated prevalence of the sensitive item
+prevalence <- coef(model)["treat"]
+cat("Estimated prevalence of the sensitive item:", round(prevalence, 3))
+```
+
 9. Now, estimate a similar model, but including the covariates. Which covariates are correlated with the sensitive item?
 
+```{r}
+# Load necessary packages
+library(readr)
+library(dplyr)
+
+# Load the dataset
+url <- "https://raw.githubusercontent.com/danilofreire/qtm385/main/assignments/10-assignment/data.csv"
+data <- read_csv(url)
+
+# Fit the linear model with covariates
+model_cov <- lm(nlist ~ treat + female + fortyplus + edu + tv + playeremployment, data = data)
+
+# Display summary
+summary(model_cov)
+```
+
 10. Finally, estimate a model controlling for ceiling and floor effects. As an example, see the last model on this page: <https://list.sensitivequestions.org/articles/getting-started.html>. What happens to the coefficients?
+
+```{r}
+library(readr)
+library(dplyr)
+library(list)
+
+# Reload fresh dataset
+url <- "https://raw.githubusercontent.com/danilofreire/qtm385/main/assignments/10-assignment/data.csv"
+data <- read_csv(url)
+
+# Convert tibble to data frame (important!)
+data <- as.data.frame(data)
+
+# Fit the model with as.formula and as.data.frame fix
+model_ceiling_floor <- ictreg(
+  formula = as.formula("nlist ~ female + fortyplus + edu + tv + playeremployment"),
+  treat = "treat",
+  data = data,
+  J = 3
+)
+
+# Show summary
+summary(model_ceiling_floor)
+```

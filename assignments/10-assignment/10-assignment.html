@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>QTM 385 - Experimental Methods</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="10-assignment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="10-assignment_files/libs/quarto-html/quarto.js"></script>
+<script src="10-assignment_files/libs/quarto-html/popper.min.js"></script>
+<script src="10-assignment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="10-assignment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="10-assignment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="10-assignment_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="10-assignment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="10-assignment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="10-assignment_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">QTM 385 - Experimental Methods</h1>
+<p class="subtitle lead">Assignment 10</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="instructions" class="level1">
+<h1>Instructions</h1>
+<p>This assignment covers lectures 21 and 22, which discuss survey experiments and techniques for measuring sensitive questions. The objective is to apply the concepts discussed in the lectures in a practical exercise. If you have any questions about the assignment, feel free to email me at <a href="mailto:danilo.freire@emory.edu" class="email">danilo.freire@emory.edu</a>.</p>
+<p>Good luck!</p>
+</section>
+<section id="questions" class="level1">
+<h1>Questions</h1>
+<ol type="1">
+<li>In the context of survey experiments, what does it mean for a manipulation to have “construct validity”? How can pilot testing help ensure construct validity of a manipulation?</li>
+</ol>
+<p>In the context of survey experiments, construct validity refers to the extent to which a manipulation accurately represents the theoretical concept it is intended to test. A manipulation with high construct validity ensures that any observed effects on respondents’ attitudes or behaviors can be confidently attributed to the construct of interest, rather than to unrelated or confounding factors. For instance, if a study aims to examine the effects of populist rhetoric, the manipulation must truly reflect the core elements of populism—such as anti-elitism and people-centrism—rather than simply emotional language or nationalistic themes, unless those are explicitly part of the conceptual definition. Pilot testing plays a crucial role in establishing construct validity. By exposing a small sample to the experimental materials in advance, researchers can assess whether participants interpret the manipulation in the intended way. This process may involve follow-up questions, cognitive interviews, or pre-tests measuring perceptions of the stimulus. If participants misinterpret the manipulation or fail to perceive the targeted construct, researchers can revise and refine the materials accordingly. In this way, pilot testing helps ensure that the manipulation effectively and consistently captures the intended theoretical construct, enhancing the internal rigor and interpretability of the experiment.</p>
+<ol start="2" type="1">
+<li>Imagine you are designing a survey experiment to study the effect of “fake news” headlines on political attitudes. Propose two different survey experiment paradigms (vignette design, question wording, etc) that you could use to manipulate exposure to fake news. For each paradigm, describe the manipulation and discuss its strengths and weaknesses in the context of studying fake news effects.</li>
+</ol>
+<p>One possible survey experiment paradigm to study the effect of fake news on political attitudes is a <strong>vignette design</strong> in which participants are randomly assigned to read a short news article or headline—either a fabricated, misleading headline (the treatment) or a factually accurate, mainstream headline (the control)—on a political topic such as immigration or election integrity. After exposure, participants are asked to report their attitudes toward the issue discussed in the article. This design allows researchers to isolate the causal effect of fake news content by directly comparing attitudes across treatment conditions. A strength of this approach is its realism: the vignette closely mirrors how individuals encounter news in everyday life. It also provides a controlled way to test specific claims or narrative frames. However, a key weakness is that single exposure may not fully capture the cumulative or repeated nature of fake news consumption, and respondents may not engage with the content as they would organically, limiting ecological validity.</p>
+<p>A second approach could involve <strong>manipulating question wording</strong> by embedding fake or misleading information within the phrasing of attitudinal questions. For example, a treatment group might be asked, “Given the widespread reports of voter fraud in the last election, how concerned are you about election security?” while a control group is asked the same question without the prefacing clause. This subtle manipulation simulates how exposure to fake news may seep into public discourse and influence perceptions without direct sourcing. A strength of this paradigm is that it captures the persuasive influence of framing and misinformation in a more diffuse, implicit way. However, the weakness lies in its potential to conflate question wording effects with exposure to fake news itself—it may be unclear whether the effect is due to the misinformation or simply the suggestive nature of the question format. Additionally, it lacks the visual or stylistic cues typical of fake news content, which may limit its realism.</p>
+<ol start="3" type="1">
+<li>Now imagine you are studying a highly sensitive topic like domestic violence perpetration using a survey experiment. Which of the sensitive question techniques discussed in Lecture 22 (list experiment, RRT, endorsement experiment, conjoint analysis) do you think would be least ethically problematic and most methodologically appropriate for this topic? Justify your choice, considering both ethical and methodological factors.</li>
+</ol>
+<p>For a highly sensitive topic like domestic violence perpetration, the list experiment (also known as the item count technique) is likely the least ethically problematic and most methodologically appropriate among the techniques discussed. The list experiment offers a way for respondents to indirectly report on stigmatized behaviors without having to admit them explicitly. Participants are presented with a list of non-sensitive behaviors and are asked how many (not which) they have engaged in; the treatment group receives the same list with the sensitive item—such as perpetrating violence—added. By comparing the average number of behaviors reported between the two groups, researchers can estimate the prevalence of the sensitive behavior without identifying individual responses. Ethically, this technique offers a high degree of privacy and minimizes the risk of emotional distress or social desirability bias, since respondents never have to directly confront or disclose the sensitive act. Methodologically, it allows for population-level inferences while protecting individual anonymity. While techniques like the randomized response technique (RRT) also aim to ensure confidentiality, they can be cognitively complex and may confuse respondents, reducing data quality. The endorsement experiment and conjoint analysis are less suited to measuring direct behavioral admissions and more appropriate for attitudinal or preference-based outcomes. Thus, the list experiment strikes the best balance between ethical sensitivity and methodological rigor for studying a topic as delicate as domestic violence perpetration.</p>
+<ol start="4" type="1">
+<li>Many survey experiments, especially those using online platforms, rely on convenience samples. Discuss the potential implications of using convenience samples (vs.&nbsp;probability samples) for the external validity of survey experiment findings, particularly when studying sensitive topics or seeking to generalise to specific populations. How can researchers mitigate the limitations of convenience samples in survey experiments?</li>
+</ol>
+<p>Using convenience samples in survey experiments—such as those drawn from online platforms like MTurk or Prolific—can pose significant challenges for external validity, especially when studying sensitive topics or aiming to generalize findings to broader populations. Convenience samples often consist of individuals who are more technologically literate, younger, and more politically engaged than the general population, which can limit the representativeness of the results. When dealing with sensitive topics like domestic violence or political extremism, participants in convenience samples may differ systematically from the target population in terms of their willingness to disclose information or their exposure to certain experiences. This means that estimated treatment effects may not accurately reflect how a broader, more diverse population would respond. Moreover, if the sample lacks variation on key demographic or attitudinal variables, it becomes difficult to assess how effects might differ across subgroups.</p>
+<p>To mitigate these limitations, researchers can take several steps. One approach is to use post-stratification weights to align the sample more closely with population benchmarks on key demographics. Another is to replicate the study across multiple samples, including more representative panels or even probability-based samples when possible. Researchers can also focus on internal validity—ensuring causal inference is strong—while being transparent about external validity limitations. Finally, embedding manipulation checks and collecting demographic covariates allows for subgroup analysis, which can help assess whether findings are robust across different segments of the sample. While convenience samples offer practical advantages, careful design and transparency are crucial to responsibly interpreting and generalizing survey experiment findings.</p>
+<ol start="5" type="1">
+<li>In the context of survey experiments, what are some potential ethical concerns related to the use of deception in experimental manipulations? How can researchers balance the need for deception to achieve valid experimental results with the ethical obligation to obtain informed consent from participants?</li>
+</ol>
+<p>In survey experiments, the use of deception—such as presenting false information or concealing the true purpose of the study—can raise important ethical concerns. One major issue is that deception may undermine participants’ ability to provide fully informed consent, a core principle of ethical research. Participants typically agree to take part in studies based on an understanding of what the research involves; when deception is used, that understanding is, by design, incomplete. This can erode trust between researchers and participants, particularly if the deception involves emotionally charged or sensitive topics. There is also a risk of psychological harm if participants feel manipulated, embarrassed, or distressed upon learning the true nature of the study during debriefing. To balance the need for deception with ethical obligations, researchers must ensure that the deception is justified by the study’s potential scientific value and that there is no feasible non-deceptive alternative. Ethics review boards often require that any deception be minimal and that participants be fully debriefed afterward, including an explanation of the true purpose of the study and the reason for the deception. Importantly, participants should also be given the option to withdraw their data after debriefing. By carefully weighing the benefits and risks, limiting the extent of deception, and maintaining transparency post-study, researchers can uphold ethical standards while still conducting methodologically rigorous experiments.</p>
+<ol start="6" type="1">
+<li>Compare and contrast “list experiments” and “conjoint analysis” as methods for studying sensitive topics. In what situations might one be preferred over the other?</li>
+</ol>
+<p>List experiments and conjoint analysis are both valuable tools in survey research, but they serve different purposes and are suited to different types of sensitive topics. A list experiment is designed to estimate the prevalence of a sensitive behavior or belief without requiring respondents to directly admit to it. Participants are shown a list of items and asked how many, not which, apply to them. A treatment group receives the same list with an added sensitive item, and the difference in means between groups estimates the proportion who endorse the sensitive item. This method is particularly useful when studying stigmatized behaviors, such as domestic violence perpetration or racial prejudice, where direct questioning may lead to underreporting due to social desirability bias. In contrast, conjoint analysis presents respondents with profiles that vary across several attributes and asks them to make choices or judgments based on those profiles. While it can be used to infer preferences on sensitive dimensions—such as how race, religion, or gender might influence hiring or asylum decisions—it does not measure personal behaviors but rather attitudes or decision-making trade-offs. Conjoint analysis is often preferred when the goal is to understand how people evaluate complex social scenarios or rank competing values, whereas list experiments are more appropriate when estimating the true level of endorsement or participation in taboo or socially undesirable behaviors. In short, list experiments protect individual anonymity in measuring hidden behaviors, while conjoint analysis uncovers implicit preferences in structured decision contexts.</p>
+<ol start="7" type="1">
+<li>List experiments rely on the “no design effects” assumption, that is, that the inclusion of the sensitive item does not change responses to the control items. Describe a scenario where this assumption might be violated in a study measuring prejudice using a list experiment. What would be the consequences for the interpretation of the results?</li>
+</ol>
+<p>A violation of the “no design effects” assumption in a list experiment can occur when the inclusion of the sensitive item alters how respondents interpret or respond to the other, non-sensitive control items. For example, imagine a study measuring racial prejudice where the treatment group receives a list that includes the sensitive item “I would not want a person of another race as a neighbor,” along with more neutral control items such as “I dislike noisy neighbors” and “I prefer to live near parks.” The presence of the racially charged item may shift how participants view the entire list—either by making them more cautious in their responses or by prompting them to reinterpret the meaning of the other items through a racial lens. As a result, respondents in the treatment group might underreport even non-sensitive items to avoid being perceived as biased, or they may overreport to mask their true views. This distorts the comparison between treatment and control groups, violating the assumption that the sensitive item has no effect on responses to other items. The consequence is that the estimated prevalence of the sensitive attitude becomes unreliable, potentially underestimating or overestimating the true level of prejudice. Without the no design effects assumption holding, the core logic of the list experiment—isolating the impact of the sensitive item—breaks down, undermining the validity of the results.</p>
+<ol start="8" type="1">
+<li>In lecture 22, we discussed <a href="https://journals.sagepub.com/doi/full/10.1177/20531680221108328">an article by Chapkovski et al.&nbsp;(2022)</a> which used a list experiment to measure preference falsification regarding support for Russians in the Ukraine War. A slightly modified version of the database can be found here: <a href="https://github.com/danilofreire/qtm385/blob/main/assignments/10-assignment/data.csv" class="uri">https://github.com/danilofreire/qtm385/blob/main/assignments/10-assignment/data.csv</a>. The dependent variable is called <code>nlist</code>, and the treatment variable is called <code>treat</code>. The number of control items (<span class="math inline">\(J\)</span>) is 3. <code>female</code>, <code>fortyplus</code>, <code>edu</code>, <code>tv</code>, <code>playeremployment</code> are covariates describing whether the respondent is female, whether they are over 40 years old, whether they have a university education, whether they watch Russian TV channels, and whether the respondent is employed.</li>
+</ol>
+<p>The <code>list</code> package can be used to estimate the treatment effect, and the <code>ictreg()</code> function can be applied to perform the analysis. More information is described at <a href="https://list.sensitivequestions.org/articles/getting-started.html" class="uri">https://list.sensitivequestions.org/articles/getting-started.html</a>.</p>
+<p>Using a linear model, estimate the prevalence of the sensitive item. This is obtained by regressing <code>nlist</code> on a constant and <code>treat</code> as the treatment variable. The result is the prevalence of the sensitive item. What is the estimated prevalence? (Note: the prevalence here is slightly different from the prevalence in the article because we are using a modified version of the dataset.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/danilofreire/qtm385/main/assignments/10-assignment/data.csv"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2981 Columns: 8</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (8): nlist, female, fortyplus, edu, tv, playeremployment, treat, direct
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run linear regression: nlist ~ treat</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(nlist <span class="sc">~</span> treat, <span class="at">data =</span> data)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize model</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = nlist ~ treat, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.99865 -0.41118  0.00135  0.58882  2.00135 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.41118    0.02107   66.97   &lt;2e-16 ***
+treat        0.58747    0.02992   19.63   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.8169 on 2979 degrees of freedom
+Multiple R-squared:  0.1146,    Adjusted R-squared:  0.1143 
+F-statistic: 385.4 on 1 and 2979 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract estimated prevalence of the sensitive item</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>prevalence <span class="ot">&lt;-</span> <span class="fu">coef</span>(model)[<span class="st">"treat"</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Estimated prevalence of the sensitive item:"</span>, <span class="fu">round</span>(prevalence, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimated prevalence of the sensitive item: 0.587</code></pre>
+</div>
+</div>
+<ol start="9" type="1">
+<li>Now, estimate a similar model, but including the covariates. Which covariates are correlated with the sensitive item?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary packages</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/danilofreire/qtm385/main/assignments/10-assignment/data.csv"</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2981 Columns: 8
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (8): nlist, female, fortyplus, edu, tv, playeremployment, treat, direct
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the linear model with covariates</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>model_cov <span class="ot">&lt;-</span> <span class="fu">lm</span>(nlist <span class="sc">~</span> treat <span class="sc">+</span> female <span class="sc">+</span> fortyplus <span class="sc">+</span> edu <span class="sc">+</span> tv <span class="sc">+</span> playeremployment, <span class="at">data =</span> data)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display summary</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_cov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = nlist ~ treat + female + fortyplus + edu + tv + 
+    playeremployment, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.16463 -0.44876 -0.02268  0.60532  2.15923 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       1.39468    0.03985  34.999  &lt; 2e-16 ***
+treat             0.59143    0.02979  19.854  &lt; 2e-16 ***
+female           -0.05354    0.03017  -1.775  0.07602 .  
+fortyplus         0.01752    0.03192   0.549  0.58324    
+edu              -0.09179    0.03079  -2.982  0.00289 ** 
+tv                0.12444    0.03051   4.078 4.65e-05 ***
+playeremployment  0.01829    0.01680   1.088  0.27657    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.8128 on 2974 degrees of freedom
+Multiple R-squared:  0.125, Adjusted R-squared:  0.1232 
+F-statistic: 70.78 on 6 and 2974 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ol start="10" type="1">
+<li>Finally, estimate a model controlling for ceiling and floor effects. As an example, see the last model on this page: <a href="https://list.sensitivequestions.org/articles/getting-started.html" class="uri">https://list.sensitivequestions.org/articles/getting-started.html</a>. What happens to the coefficients?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'list' was built under R version 4.3.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: sandwich</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'sandwich' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reload fresh dataset</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/danilofreire/qtm385/main/assignments/10-assignment/data.csv"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2981 Columns: 8</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (8): nlist, female, fortyplus, edu, tv, playeremployment, treat, direct
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert tibble to data frame (important!)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(data)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model with as.formula and as.data.frame fix</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>model_ceiling_floor <span class="ot">&lt;-</span> <span class="fu">ictreg</span>(</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> <span class="fu">as.formula</span>(<span class="st">"nlist ~ female + fortyplus + edu + tv + playeremployment"</span>),</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">treat =</span> <span class="st">"treat"</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">J =</span> <span class="dv">3</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Show summary</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_ceiling_floor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Item Count Technique Regression 
+
+Call: ictreg(formula = as.formula("nlist ~ female + fortyplus + edu + tv + playeremployment"), 
+    data = data, treat = "treat", J = 3)
+
+Sensitive item 
+                     Est.    S.E.
+(Intercept)       0.20048 0.38982
+female           -0.59025 0.33490
+fortyplus         0.81358 0.36050
+edu              -0.23180 0.34334
+tv                1.16263 0.34453
+playeremployment -0.06259 0.19571
+
+Control items 
+                     Est.    S.E.
+(Intercept)      -0.09610 0.07630
+female            0.00820 0.06072
+fortyplus        -0.08528 0.06268
+edu              -0.10082 0.06161
+tv                0.00188 0.06259
+playeremployment  0.02870 0.03429
+
+Log-likelihood: -3631.027
+
+Number of control items J set to 3. Treatment groups were indicated by '1' and the control group by '0'.</code></pre>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
